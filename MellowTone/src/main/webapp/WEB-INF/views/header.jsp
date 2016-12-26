@@ -149,7 +149,7 @@ function logout(){
 
 
 <div id="header" align="center">
-<div id="logo" align="center"><a href="main.do"><img src="/resources/image/logo.png" width="300" height="150" /></a></div>
+<div id="logo" align="center"><a href="/MellowTone/main"><img src="/resources/image/logo.png" width="300" height="150" /></a></div>
 <div id="member">
 <%
 if( session.getAttribute("id")==null){ %>
