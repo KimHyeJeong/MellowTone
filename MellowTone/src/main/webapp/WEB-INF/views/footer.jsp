@@ -49,7 +49,7 @@
 <div id="footer">
  <table>
  <tr><td height="40px"></td></tr>
- <tr><td > 박재현 ㅣ 김혜정 ㅣ 채효원 ㅣ 윤철 ㅣ 안선영 </td></tr>
+ <tr><td > 김혜정 ㅣ 채효원 </td></tr>
  <tr><td class="td_st" >Designed by Phoenix KOSTA 130</td></tr>
  <tr><td class="td_st" >Copyright&copy; All Right Reserved</td></tr>
   </table>
