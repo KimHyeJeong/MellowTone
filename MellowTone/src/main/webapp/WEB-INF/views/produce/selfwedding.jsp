@@ -23,7 +23,7 @@
 
 
 </style>
-<script type="text/javascript" src="../mellowtest/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 
 $(window).bind('scroll', function() { 
@@ -55,7 +55,7 @@ $(window).bind('scroll', function() {
                colspan="4">Self Wedding</td>
          </tr>
          <tr>
-            <td align="center"><img src="./main/image/produce.jpg" width="700px"></td>
+            <td align="center"><img src="/resources/image/produce.jpg" width="700px"></td>
          </tr>
          <tr>
             <td align="center" style="padding-bottom: 90px;">Self Wedding이란?<br><br>
@@ -72,7 +72,7 @@ $(window).bind('scroll', function() {
          </tr>
 
          <tr>
-            <td align="center"><img src="./gallery_image/natural_4.png"
+            <td align="center"><img src="/resources/gallery_image/natural_4.png"
                width="290px"></td>
          </tr>
 
@@ -102,7 +102,7 @@ $(window).bind('scroll', function() {
          </tr>
 
          <tr>
-            <td align="center"><img src="./main/image/selfwedding.jpg"></td>
+            <td align="center"><img src="/resources/image/selfwedding.jpg"></td>
          </tr>
 
          <tr>

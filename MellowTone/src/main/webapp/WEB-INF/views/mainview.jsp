@@ -78,7 +78,7 @@ html {
 }
 
 </style>
-<script type="text/javascript" src="/MellowTest/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
    var num;
    var total;
@@ -191,10 +191,10 @@ html {
 <body>
    <div id="popup1">
       <button id="prev_bt" type="button" onclick="prev_bt()">
-         <img src="./gallery_slide_image/left.png" />
+         <img src="/resources/gallery_slide_image/left.png" />
       </button>
       <button id="next_bt" type="button" onclick="next_bt()">
-         <img src="./gallery_slide_image/right.png" />
+         <img src="/resources/gallery_slide_image/right.png" />
          </button>
    </div>
 
