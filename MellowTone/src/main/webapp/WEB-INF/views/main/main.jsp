@@ -369,14 +369,14 @@ a{
       <div class="slide_img">
          <div class="slider">
             <div class="btn_box">
-               <a href="#" class="prev"><img src="./main/image/prev.png"></a> 
-               <a href="#" class="next"><img src="./main/image/next.png"></a>
+               <a href="#" class="prev"><img src="/resources/image/main_prev.png"></a> 
+               <a href="#" class="next"><img src="/resources/image/main_next.png"></a>
             </div>
             <ul class="img_list">
-               <li><img src="./main/image/img2.jpg"></li>
-               <li><img src="./main/image/img3.jpg"></li>
-               <li><img src="./main/image/img4.jpg"></li>
-               <li><img src="./main/image/img5.jpg"></li>
+               <li><img src="/resources/image/img2.jpg"></li>
+               <li><img src="/resources/image/img3.jpg"></li>
+               <li><img src="/resources/image/img4.jpg"></li>
+               <li><img src="/resources/image/img5.jpg"></li>
             </ul>
          </div>
       </div>
@@ -385,7 +385,7 @@ a{
       <a href="gallery.do?action=1">
          <div id="section1" onmouseover="down1(1)" onmouseout="up1(1)">
             <div>
-               <img src="./main/image/gallery.jpg" width="330px"
+               <img src="/resources/image/gallery.jpg" width="330px"
                   height="550px">
             </div>
             <div id="cover1">
@@ -417,7 +417,7 @@ a{
       <a href="produce.do?action=self_wedding">
          <div id="section2">
             <div>
-               <img src="./main/image/about.png" width="330px"
+               <img src="/resources/image/about.png" width="330px"
                   height="300px">
             </div>
             <div></div>
@@ -430,7 +430,7 @@ a{
       <a href="item.do?action=dress">
          <div id="section3" onmouseover="down1(3)" onmouseout="up1(3)">
             <div>
-               <img src="./main/image/item_img.jpg" width="330px"
+               <img src="/resources/image/item_img.jpg" width="330px"
                   height="500px">
             </div>
             <div id="cover3">
@@ -463,7 +463,7 @@ a{
       
          <div id="section4" onmouseover="down1(4)" onmouseout="up1(4)" style="overflow: hidden;">
             <div>
-               <img src="./main/image/cal.jpg" width="330px"
+               <img src="/resources/image/cal.jpg" width="330px"
                   height="400px">
             </div>
             <div id="cover4">
