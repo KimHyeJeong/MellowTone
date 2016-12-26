@@ -14,8 +14,6 @@
    background-color:#fff
       }
 
- 
-   
    .sideBar_Menu {
     text-align: center;  
     height:60px;
@@ -38,11 +36,9 @@
    
    
    #sideBar_Title{
-
       height:110px;
       font-size:30px;
       font-weight:bold;
-   
    }
    
    
