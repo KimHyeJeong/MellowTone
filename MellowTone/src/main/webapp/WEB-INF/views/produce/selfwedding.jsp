@@ -106,7 +106,7 @@ $(window).bind('scroll', function() {
          </tr>
 
          <tr>
-            <td align="right"><b>PhotoGrapher : Park Jae Hyun</b></td>
+            <td align="right"><b>PhotoGrapher : 김 혜 정</b></td>
          </tr>
 
          <tr>
