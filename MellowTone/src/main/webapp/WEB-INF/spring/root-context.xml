@@ -7,8 +7,7 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	 <!-- DataSource 등록 (Oracle드라이버설정) -->
-   <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
-         id="dataSource">
+   <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
       <property name="driverClassName">
          <value>oracle.jdbc.driver.OracleDriver</value>
       </property>
@@ -28,8 +27,7 @@
    </bean>
    
    <!-- SqlSession객체 생성(mapper(XML파일)에 있는 sql문 호출) -->
-   <bean class="org.mybatis.spring.SqlSessionTemplate"
-         id="sqlSession">
+   <bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
       <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>      
    </bean>
    
