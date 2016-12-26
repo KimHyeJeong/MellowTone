@@ -166,9 +166,9 @@ if( session.getAttribute("id")==null){ %>
 <div id="navi">
   <div id="menu">
     <ul>
-       <li><a href="produce.do?action=self_wedding" onMouseOver="processClick(0)" onMouseOut="upMenu(0)" >PRODUCE</a>
+       <li><a href="/MellowTone/produce" onMouseOver="processClick(0)" onMouseOut="upMenu(0)" >PRODUCE</a>
                <ul class="smallMenu" onMouseOver="processClick(0)" onMouseOut="upMenu(0)">
-                    <li> <a href="produce.do?action=self_wedding">Self Wedding</a></li> 
+                    <li> <a href="/MellowTone/produce">Self Wedding</a></li> 
                     <li> <a href="#mellowtone">MellowTone</a></li>
                     <li> <a href="#photographer">PhotoGrapher</a></li>
                 </ul>   

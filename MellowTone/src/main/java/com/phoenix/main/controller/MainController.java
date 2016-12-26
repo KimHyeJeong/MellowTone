@@ -9,8 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 	
 	@RequestMapping("/main")
-	public String text(Model model)throws Exception{
+	public String main(Model model)throws Exception{
 		model.addAttribute("body", "./main/main.jsp");
+		return "mainview";
+	}
+	
+	@RequestMapping("/produce")
+	public String produce(Model model)throws Exception{
+		model.addAttribute("body", "./produce/selfwedding.jsp");
 		return "mainview";
 	}
 }
