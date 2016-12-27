@@ -188,12 +188,12 @@ if( session.getAttribute("id")==null){ %>
                     <li> <a href="/MellowTone/item?no=10" >Acessory</a></li> 
                 </ul>
                 </li>
-        <li><a href="gallery.do?action=1" onMouseOver="processClick(3)" onMouseOut="upMenu(3)">GALLERY</a>
+        <li><a href="/MellowTone/gallery?no=11" onMouseOver="processClick(3)" onMouseOut="upMenu(3)">GALLERY</a>
                 <ul class="smallMenu" onMouseOver="processClick(3)" onMouseOut="upMenu(3)">
-                    <li> <a href="gallery.do?action=1" >Regular Snap</a></li> 
-                    <li> <a href="gallery.do?action=2" >Natural Light Snap</a></li>
-                    <li> <a href="gallery.do?action=3" >Studio Snap</a></li> 
-                    <li> <a href="gallery.do?action=4" >Outer Snap</a></li> 
+                    <li> <a href="/MellowTone/gallery?no=11" >Regular Snap</a></li> 
+                    <li> <a href="/MellowTone/gallery?no=12" >Natural Light Snap</a></li>
+                    <li> <a href="/MellowTone/gallery?no=13" >Studio Snap</a></li> 
+                    <li> <a href="/MellowTone/gallery?no=14" >Outer Snap</a></li> 
                 </ul>
                 </li> 
                

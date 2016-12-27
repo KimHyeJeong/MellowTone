@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gallery">
+	<select id="select" parameterType="int" resultType="gallery">
+		select num, name, path, slide_path, content
+		from gallery
+		where num=#{num}
+	</select>
+</mapper>

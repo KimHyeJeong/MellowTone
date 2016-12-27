@@ -134,8 +134,8 @@ insert into item values('ample veil','/resources/image/veil2.png','/resources/im
 																					 °íÁ¤ÇÉ°ú ºÐ¸®µÇ¾î Å»ºÎÂøÀÌ ½±½À´Ï´Ù.<br>',10000,2,10);
 																 
 																 
-																 
-																 
+		
+																					
 --»çÀÌµå¹Ù °¶·¯¸®
 drop table sidebar_gallery;
 create table sidebar_gallery(
@@ -144,10 +144,52 @@ create table sidebar_gallery(
 	url varchar2(40) not null
 );
 
-insert into sidebar_gallery values (sidebar_seq.nextval,'Regular Snap','./gallery.do?action=1');
-insert into sidebar_gallery values (sidebar_seq.nextval,'Natural Light Snap','./gallery.do?action=2');
-insert into sidebar_gallery values (sidebar_seq.nextval,'Studio Snap','./gallery.do?action=3');
-insert into sidebar_gallery values (sidebar_seq.nextval,'Outer Snap','./gallery.do?action=4');
+insert into sidebar_gallery values (sidebar_seq.nextval,'Regular Snap','/MellowTone/gallery?no=11');
+insert into sidebar_gallery values (sidebar_seq.nextval,'Natural Light Snap','/MellowTone/gallery?no=12');
+insert into sidebar_gallery values (sidebar_seq.nextval,'Studio Snap','/MellowTone/gallery?no=13');
+insert into sidebar_gallery values (sidebar_seq.nextval,'Outer Snap','/MellowTone/gallery?no=14');
+
+drop sequence gallery_seq;
+create sequence gallery_seq
+	start with 1
+	increment by 1
+	nocycle
+	nocache;
+
+drop table gallery;
+create table gallery(
+	no number primary key,
+	num number,
+	name varchar2(40) not null,
+	path varchar2(100) not null,
+	slide_path varchar2(100) not null,
+	content LONG,
+	foreign key(num) references sidebar_gallery(no)
+);
+
+insert into gallery values (gallery_seq.nextval,11 ,'º»½Ä ½º³À', '/resources/gallery_image/regular_1.png', '/resources/gallery_slide_image/regular_s1.png', null);
+insert into gallery values (gallery_seq.nextval,11 ,'º»½Ä ½º³À', '/resources/gallery_image/regular_2.png', '/resources/gallery_slide_image/regular_s2.png', null);
+insert into gallery values (gallery_seq.nextval,11 ,'º»½Ä ½º³À', '/resources/gallery_image/regular_3.png', '/resources/gallery_slide_image/regular_s3.png', null);
+insert into gallery values (gallery_seq.nextval,11 ,'º»½Ä ½º³À', '/resources/gallery_image/regular_4.png', '/resources/gallery_slide_image/regular_s4.png', null);
+insert into gallery values (gallery_seq.nextval,11 ,'º»½Ä ½º³À', '/resources/gallery_image/regular_5.png', '/resources/gallery_slide_image/regular_s5.png', null);
+insert into gallery values (gallery_seq.nextval,11 ,'º»½Ä ½º³À', '/resources/gallery_image/regular_6.png', '/resources/gallery_slide_image/regular_s6.png', null);
+insert into gallery values (gallery_seq.nextval,11 ,'º»½Ä ½º³À', '/resources/gallery_image/regular_7.png', '/resources/gallery_slide_image/regular_s7.png', null);
+   
+insert into gallery values (gallery_seq.nextval,12, 'ÀÚ¿¬±¤ ½º³À', '/resources/gallery_image/natural_1.png','/resources/gallery_slide_image/natural_s1.png',null);
+insert into gallery values (gallery_seq.nextval,12, 'ÀÚ¿¬±¤ ½º³À', '/resources/gallery_image/natural_2.png','/resources/gallery_slide_image/natural_s2.png',null);
+insert into gallery values (gallery_seq.nextval,12, 'ÀÚ¿¬±¤ ½º³À', '/resources/gallery_image/natural_3.png','/resources/gallery_slide_image/natural_s3.png',null);
+insert into gallery values (gallery_seq.nextval,12, 'ÀÚ¿¬±¤ ½º³À', '/resources/gallery_image/natural_4.png','/resources/gallery_slide_image/natural_s4.png',null);
+
+insert into gallery values (gallery_seq.nextval,13 ,'½ºÆ©µð¿À ½º³À', '/resources/gallery_image/studio_1.png', '/resources/gallery_slide_image/studio_s1.png', null);
+insert into gallery values (gallery_seq.nextval,13 ,'½ºÆ©µð¿À ½º³À', '/resources/gallery_image/studio_2.png', '/resources/gallery_slide_image/studio_s2.png', null);
+insert into gallery values (gallery_seq.nextval,13 ,'½ºÆ©µð¿À ½º³À', '/resources/gallery_image/studio_3.png', '/resources/gallery_slide_image/studio_s3.png', null);
+insert into gallery values (gallery_seq.nextval,13 ,'½ºÆ©µð¿À ½º³À', '/resources/gallery_image/studio_4.png', '/resources/gallery_slide_image/studio_s4.png', null);
+
+insert into gallery values (gallery_seq.nextval,14 ,'¾ß¿Ü ½º³À', '/resources/gallery_image/outer_1.png', '/resources/gallery_slide_image/outer_s1.png', null);
+insert into gallery values (gallery_seq.nextval,14 ,'¾ß¿Ü ½º³À', '/resources/gallery_image/outer_2.png', '/resources/gallery_slide_image/outer_s2.png', null);
+insert into gallery values (gallery_seq.nextval,14 ,'¾ß¿Ü ½º³À', '/resources/gallery_image/outer_3.png', '/resources/gallery_slide_image/outer_s3.png', null);
+insert into gallery values (gallery_seq.nextval,14 ,'¾ß¿Ü ½º³À', '/resources/gallery_image/outer_4.png', '/resources/gallery_slide_image/outer_s4.png', null);
+
 
 
 

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.phoenix.main.service.GalleryService;
 import com.phoenix.main.service.ItemService;
 import com.phoenix.main.service.PictureService;
 import com.phoenix.main.service.SidebarService;
@@ -22,6 +23,9 @@ public class MainController {
    
    @Inject
    private ItemService item_service;
+   
+   @Inject
+   private GalleryService gallery_service;
    
    @RequestMapping("/main")
    public String main(Model model)throws Exception{
@@ -61,6 +65,15 @@ public class MainController {
       model.addAttribute("list", sidebar_service.select_item());
       model.addAttribute("item", item_service.list_detail(item));
       model.addAttribute("body", "./item/item_detail.jsp");
+      return "mainview";
+   }
+   
+   @RequestMapping("/gallery")
+   public String gallery(Model model, int no)throws Exception{
+      model.addAttribute("title", "Gallery");
+      model.addAttribute("list", sidebar_service.select_gallery());
+      model.addAttribute("gallery", gallery_service.select(no));
+      model.addAttribute("body", "./gallery/gallery_list.jsp");
       return "mainview";
    }
    
