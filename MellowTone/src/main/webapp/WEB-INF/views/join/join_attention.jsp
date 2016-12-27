@@ -25,13 +25,13 @@
 </style>
 <script type="text/javascript">
 	function cancel() {
-		location.href = "mypage.do?action=login";
+		location.href = "/MellowTone/login";
 	}
 </script>
 </head>
 <body>
 	<center>
-		<form method="post" action="mypage.do?action=accept">
+		<form method="post" action="/MellowTone/joinform">
 			<table cellpadding="8" style="border-collapse: collapse;" 
 				width="500px">
 				<tr>

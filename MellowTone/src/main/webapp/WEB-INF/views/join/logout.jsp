@@ -7,5 +7,5 @@
 <title>Insert title here</title>
 <%
    session.invalidate();
-   response.sendRedirect("../main.do");
+   response.sendRedirect("/MellowTone/main");
 %>

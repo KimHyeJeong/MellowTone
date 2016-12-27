@@ -28,7 +28,7 @@
 
 <script type="text/javascript">
 	function cancel() {
-		location.href = "main.do";
+		location.href = "/MellowTone/main";
 	}
 	function check(){
 		
@@ -49,7 +49,7 @@
 </head>
 <body>
 	<center>
-		<form method="post" action="mypage.do?action=login_succ" name="frm">
+		<form method="post" action="/MellowTone/main" name="frm">
 			<table cellpadding="8" style="border-collapse: collapse; font-size: 18px;"
 				width="900px"  >
 				<tr style="font-size: 30px; font-weight: bold;">
@@ -72,7 +72,7 @@
 					<td colspan="2" align="center"><a
 						href="mypage.do?action=findId" style="font-size: 13px;">아이디</a>/<a
 						href="mypage.do?action=findPass" style="font-size: 13px;"> 비밀번호 찾기</a> <br> <a
-						href="mypage.do?action=join" style="font-size: 13px;">회원가입</a></td>
+						href="/MellowTone/join" style="font-size: 13px;">회원가입</a></td>
 				</tr>
                  <tr height="200px"></tr>
 			</table>

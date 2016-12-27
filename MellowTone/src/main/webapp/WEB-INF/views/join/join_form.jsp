@@ -55,7 +55,7 @@
 	
 	<script type="text/javascript">
 	function cancel(){
-		location.href="mypage.do?action=login";
+		location.href="/MellowTone/login";
 	}
 	
 	function join_check(){

@@ -130,5 +130,52 @@ public class MainController {
 	   model.addAttribute("body","./join/login_form.jsp");
 	   return "mainview";
    }
+   
+   //mypage 부분
+   @RequestMapping("/check")
+   public String check(Model model)throws Exception{
+	   model.addAttribute("title","Mypage");
+	   model.addAttribute("list",sidebar_service.select_mypage());
+	   model.addAttribute("body","./mypage/member_check.jsp");
+	   
+	   return "mainview";
+   }
+   
+   @RequestMapping("/update")
+   public String update(Model model)throws Exception{
+	   model.addAttribute("title","Mypage");
+	   model.addAttribute("list",sidebar_service.select_mypage());
+	   model.addAttribute("body","./mypage/member_edit.jsp");
+	   
+	   return "mainview";
+   }
+   
+   @RequestMapping("/delete")
+   public String delete(Model model)throws Exception{
+	   model.addAttribute("title","Mypage");
+	   model.addAttribute("list",sidebar_service.select_mypage());
+	   model.addAttribute("body","./mypage/delete_check.jsp");
+	   
+	   return "mainview";
+   }
+   
+   @RequestMapping("/pocket")
+   public String pocket(Model model)throws Exception{
+	   model.addAttribute("title","Mypage");
+	   model.addAttribute("list",sidebar_service.select_mypage());
+	   model.addAttribute("body","./mypage/pocket_list.jsp");
+	   
+	   return "mainview";
+   }
+   
+   //회원가입쪽 
+   @RequestMapping("/joinform")
+   public String joinform(Model model)throws Exception{
+	   model.addAttribute("body","./join/join_form.jsp");
+	   
+	   return "mainview";
+   }
+   
+   
 
 }
