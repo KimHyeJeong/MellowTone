@@ -4,5 +4,6 @@
 	<typeAliases>
 		<typeAlias type="com.phoenix.main.domain.SidebarVO" alias="sidebar"/>
 		<typeAlias type="com.phoenix.main.domain.PictureVO" alias="picture"/>
+		<typeAlias type="com.phoenix.main.domain.ItemVO" alias="item"/>
 	</typeAliases>
 </configuration>
