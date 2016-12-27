@@ -42,4 +42,13 @@ public class MainController {
 		model.addAttribute("body", "./picture/picture.jsp");
 		return "mainview";
 	}
+	
+	@RequestMapping("/mypage")
+	public String mypage(Model model)throws Exception{
+		
+		model.addAttribute("title","Mypage");
+		model.addAttribute("list",sidebar_service.select_mypage());
+		model.addAttribute("body","./mypage/member_check.jsp");
+		return "mainview";
+	}
 }

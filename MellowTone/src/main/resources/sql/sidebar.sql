@@ -79,3 +79,15 @@ insert into sidebar_item values (sidebar_seq.nextval,'Dress','./item.do?action=d
 insert into sidebar_item values (sidebar_seq.nextval,'Tuxedo','./item.do?action=tuxedo');
 insert into sidebar_item values (sidebar_seq.nextval,'Accessory','./item.do?action=accessory');
 
+--사이드바 마이페이지
+drop table sidebar_mypage;
+create table sidebar_mypage(
+	no number primary key,
+	name varchar2(20) not null,
+	url varchar2(40) not null
+);
+
+insert into sidebar_mypage values (sidebar_seq.nextval,'회원정보 확인','./mypage.do?action=check');
+insert into sidebar_mypage values (sidebar_seq.nextval,'회원정보 변경','./mypage.do?action=update_check');
+insert into sidebar_mypage values (sidebar_seq.nextval,'장바구니','./mypage.do?action=pocket_list');
+insert into sidebar_mypage values (sidebar_seq.nextval,'회원 탈퇴','./mypage.do?action=delete_check');

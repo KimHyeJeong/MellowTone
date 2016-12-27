@@ -35,4 +35,9 @@ public class SidebarServiceImpl implements SidebarService {
 		return dao.select_picture();
 	}
 
+	@Override
+	public List<SidebarVO> select_mypage() throws Exception {
+		return dao.select_mypage();
+	}
+
 }
