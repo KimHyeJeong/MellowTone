@@ -21,8 +21,8 @@ public class ItemDAOImpl implements ItemDAO {
 	}
 
 	@Override
-	public ItemVO list_detail(String name) throws Exception {
-		return session.selectOne("item.list_detail", name);
+	public ItemVO list_detail(String item) throws Exception {
+		return session.selectOne("item.list_detail", item);
 	}
 
 }

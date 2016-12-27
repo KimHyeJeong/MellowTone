@@ -63,9 +63,9 @@ create table sidebar_item(
 	url varchar2(40) not null
 );
 
-insert into sidebar_item values (sidebar_seq.nextval,'Dress','?no=8');
-insert into sidebar_item values (sidebar_seq.nextval,'Tuxedo','?no=9');
-insert into sidebar_item values (sidebar_seq.nextval,'Accessory','?no=10');
+insert into sidebar_item values (sidebar_seq.nextval,'Dress','/MellowTone/item?no=8');
+insert into sidebar_item values (sidebar_seq.nextval,'Tuxedo','/MellowTone/item?no=9');
+insert into sidebar_item values (sidebar_seq.nextval,'Accessory','/MellowTone/item?no=10');
 
 
 --아이템테이블

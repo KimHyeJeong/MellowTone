@@ -56,11 +56,11 @@ public class MainController {
    }
    
    @RequestMapping("/item_detail")
-   public String item_detail(Model model, String name)throws Exception{
+   public String item_detail(Model model, String item)throws Exception{
       model.addAttribute("title", "Item");
       model.addAttribute("list", sidebar_service.select_item());
-      model.addAttribute("item", item_service.list_detail(name));
-      model.addAttribute("body", "./item/item_list.jsp");
+      model.addAttribute("item", item_service.list_detail(item));
+      model.addAttribute("body", "./item/item_detail.jsp");
       return "mainview";
    }
    

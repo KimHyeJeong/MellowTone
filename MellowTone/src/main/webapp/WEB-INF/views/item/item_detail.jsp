@@ -31,8 +31,8 @@
          alert("로그인을 해야 사용할수있습니다");   
       <%}%>
    } --%>
-function cancel(){
-	location.href="item.do?action=dress";
+function cancel(no){
+	location.href="/MellowTone/item?no="+no;
 }
 </script>
 </head>
@@ -53,7 +53,7 @@ function cancel(){
             <tr><td style="font-size:18px;" align="center">대여 : ${item.price }원</td></tr>
             <tr height="90px"><td align="center">
                <input type="button" class="button2" value="장바구니"  onclick="pocketWin()" style="font-size: 18px;">&nbsp;
-               <input type="button" class="button2" value="뒤로가기" onclick="cancel()" style="font-size: 18px;">
+               <input type="button" class="button2" value="뒤로가기" onclick="cancel('${item.no}')" style="font-size: 18px;">
             </td></tr>
             <tr height="100px"></tr>
          </table>

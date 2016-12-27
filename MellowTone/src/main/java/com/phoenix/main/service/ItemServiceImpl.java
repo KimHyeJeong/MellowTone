@@ -21,8 +21,8 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
-	public ItemVO list_detail(String name) throws Exception {
-		return dao.list_detail(name);
+	public ItemVO list_detail(String item) throws Exception {
+		return dao.list_detail(item);
 	}
 
 }
