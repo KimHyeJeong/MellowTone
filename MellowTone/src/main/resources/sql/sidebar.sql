@@ -201,7 +201,7 @@ create table sidebar_mypage(
    url varchar2(40) not null
 );
 
-insert into sidebar_mypage values (sidebar_seq.nextval,'회원정보 확인','./mypage.do?action=check');
-insert into sidebar_mypage values (sidebar_seq.nextval,'회원정보 변경','./mypage.do?action=update_check');
-insert into sidebar_mypage values (sidebar_seq.nextval,'장바구니','./mypage.do?action=pocket_list');
-insert into sidebar_mypage values (sidebar_seq.nextval,'회원 탈퇴','./mypage.do?action=delete_check');
+insert into sidebar_mypage values (sidebar_seq.nextval,'회원정보 확인','/MellowTone/check');
+insert into sidebar_mypage values (sidebar_seq.nextval,'회원정보 변경','/MellowTone/update');
+insert into sidebar_mypage values (sidebar_seq.nextval,'장바구니','/MellowTone/pocket');
+insert into sidebar_mypage values (sidebar_seq.nextval,'회원 탈퇴','/MellowTone/delete');

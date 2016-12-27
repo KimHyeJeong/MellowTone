@@ -88,8 +88,14 @@ public class MainController {
    
    @RequestMapping("/join")
    public String join(Model model)throws Exception{
-      model.addAttribute("body","./join/join_form.jsp");
+      model.addAttribute("body","./join/join_attention.jsp");
       return "mainview";
+   }
+   
+   @RequestMapping("/login")
+   public String login(Model model)throws Exception{
+	   model.addAttribute("body","./join/login_form.jsp");
+	   return "mainview";
    }
 
 }

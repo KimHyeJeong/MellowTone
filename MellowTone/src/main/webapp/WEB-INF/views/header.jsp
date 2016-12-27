@@ -151,16 +151,16 @@ function logout(){
 <div id="header" align="center">
 <div id="logo" align="center"><a href="/MellowTone/main"><img src="/resources/image/logo.png" width="300" height="150" /></a></div>
 <div id="member">
-<%-- <%
+ <%
 if( session.getAttribute("id")==null){ %>
-   <a href="mypage.do?action=login">Login</a>&nbsp;&nbsp;&nbsp;
-   <a href="mypage.do?action=join">Join</a>&nbsp;&nbsp;&nbsp;
+   <a href="/MellowTone/login">Login</a>&nbsp;&nbsp;&nbsp;
+   <a href="/MellowTone/join">Join</a>&nbsp;&nbsp;&nbsp;
 <%}else {%> 
    <%= "♥ "+ session.getAttribute("id")+"님 환영합니다 ♥"%>&nbsp;&nbsp;&nbsp;&nbsp;
    <a href="#" onclick="logout()">Logout</a>&nbsp;&nbsp;&nbsp;
    <a href="mypage.do?action=check">Mypage</a>&nbsp;&nbsp;&nbsp;
    
-<%} %> --%>
+<%} %>
 </div>
 </div>
 <div id="navi">

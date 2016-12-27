@@ -200,14 +200,14 @@ html {
         </tr>
         <tr id="main_Center">
         <%
-        if(request.getAttribute("body").equals("./main/main.jsp") || request.getAttribute("body").equals("/join/join_attention.jsp")
-              || request.getAttribute("body").equals("/join/join_form.jsp")
-              || request.getAttribute("body").equals("/join/join_success.jsp")
-              || request.getAttribute("body").equals("/join/login_form.jsp")
-              || request.getAttribute("body").equals("/join/search_id.jsp")
-              || request.getAttribute("body").equals("/join/success_id.jsp")
-              || request.getAttribute("body").equals("/join/search_pass.jsp")
-              || request.getAttribute("body").equals("/join/success_pass.jsp")
+        if(request.getAttribute("body").equals("./main/main.jsp") || request.getAttribute("body").equals("./join/join_attention.jsp")
+              || request.getAttribute("body").equals("./join/join_form.jsp")
+              || request.getAttribute("body").equals("./join/join_success.jsp")
+              || request.getAttribute("body").equals("./join/login_form.jsp")
+              || request.getAttribute("body").equals("./join/search_id.jsp")
+              || request.getAttribute("body").equals("./join/success_id.jsp")
+              || request.getAttribute("body").equals("./join/search_pass.jsp")
+              || request.getAttribute("body").equals("./join/success_pass.jsp")
               ){ %>
            <td  align="center" colspan="2"><jsp:include page="${body}" flush="true"/></td>
         <%}else{ %>

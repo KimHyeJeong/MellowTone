@@ -414,7 +414,7 @@ a{
       
       
       
-      <a href="produce.do?action=self_wedding">
+      <a href="/MellowTone/Produce">
          <div id="section2">
             <div>
                <img src="/resources/image/about.png" width="330px"
@@ -427,7 +427,7 @@ a{
       
       
       
-      <a href="item.do?action=dress">
+      <a href="/MellowTone/item?no=8">
          <div id="section3" onmouseover="down1(3)" onmouseout="up1(3)">
             <div>
                <img src="/resources/image/item_img.jpg" width="330px"
