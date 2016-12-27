@@ -72,6 +72,15 @@ public class MainController {
    public String gallery(Model model, int no)throws Exception{
       model.addAttribute("title", "Gallery");
       model.addAttribute("list", sidebar_service.select_gallery());
+      if(no==11){
+    	  model.addAttribute("semititle", "REGULAR GALLERY");
+      }else if(no==12){
+    	  model.addAttribute("semititle", "NATURAL LIGHT GALLERY");
+      }else if(no==13){
+    	  model.addAttribute("semititle", "STUDIO GALLERY");
+      }else if(no==14){
+    	  model.addAttribute("semititle", "OUTER GALLERY");
+      }
       model.addAttribute("gallery", gallery_service.select(no));
       model.addAttribute("body", "./gallery/gallery_list.jsp");
       return "mainview";
