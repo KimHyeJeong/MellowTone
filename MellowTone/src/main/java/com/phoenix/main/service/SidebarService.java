@@ -10,4 +10,5 @@ public interface SidebarService {
 	public List<SidebarVO> select_gallery()throws Exception;
 	public List<SidebarVO> select_item()throws Exception;
 	public List<SidebarVO> select_picture()throws Exception;
+	public List<SidebarVO> select_mypage()throws Exception;
 }
