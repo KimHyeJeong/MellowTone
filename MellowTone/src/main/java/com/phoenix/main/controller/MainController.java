@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.phoenix.main.service.ItemService;
 import com.phoenix.main.service.PictureService;
 import com.phoenix.main.service.SidebarService;
 
@@ -18,6 +19,9 @@ public class MainController {
 	
 	@Inject
 	private PictureService picture_service;
+	
+	@Inject
+	private ItemService item_service;
 	
 	@RequestMapping("/main")
 	public String main(Model model)throws Exception{
@@ -34,12 +38,29 @@ public class MainController {
 	}
 	
 	@RequestMapping("/picture")
-	public String picture(Model model, String no)throws Exception{
-		int num = Integer.parseInt(no);
+	public String picture(Model model, int no)throws Exception{
 		model.addAttribute("title", "Picture");
 		model.addAttribute("list", sidebar_service.select_picture());
-		model.addAttribute("picture", picture_service.select(num));
+		model.addAttribute("picture", picture_service.select(no));
 		model.addAttribute("body", "./picture/picture.jsp");
+		return "mainview";
+	}
+	
+	@RequestMapping("/item")
+	public String item(Model model, int no)throws Exception{
+		model.addAttribute("title", "Item");
+		model.addAttribute("list", sidebar_service.select_item());
+		model.addAttribute("item", item_service.list(no));
+		model.addAttribute("body", "./item/item_list.jsp");
+		return "mainview";
+	}
+	
+	@RequestMapping("/item_detail")
+	public String item_detail(Model model, String name)throws Exception{
+		model.addAttribute("title", "Item");
+		model.addAttribute("list", sidebar_service.select_item());
+		model.addAttribute("item", item_service.list_detail(name));
+		model.addAttribute("body", "./item/item_list.jsp");
 		return "mainview";
 	}
 }

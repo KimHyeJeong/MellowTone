@@ -175,17 +175,17 @@ if( session.getAttribute("id")==null){ %>
                 </li>    
        <li><a href="/MellowTone/picture?no=4" onMouseOver="processClick(1)" onMouseOut="upMenu(1)">PICTURE</a>
                 <ul class="smallMenu" onMouseOver="processClick(1)" onMouseOut="upMenu(1)">
-                    <li> <a href="/Mellow/picture?no=4" >Regular Snap</a></li> 
-                    <li> <a href="/Mellow/picture?no=5" >Natural Light Snap</a></li>
-                    <li> <a href="/Mellow/picture?no=6" >Studio Snap</a></li> 
-                    <li> <a href="/Mellow/picture?no=7" >Outer Snap</a></li> 
+                    <li> <a href="/MellowTone/picture?no=4" >Regular Snap</a></li> 
+                    <li> <a href="/MellowTone/picture?no=5" >Natural Light Snap</a></li>
+                    <li> <a href="/MellowTone/picture?no=6" >Studio Snap</a></li> 
+                    <li> <a href="/MellowTone/picture?no=7" >Outer Snap</a></li> 
                 </ul>
                 </li>
-        <li><a href="item.do?action=dress" onMouseOver="processClick(2)" onMouseOut="upMenu(2)">ITEM</a>
+        <li><a href="/MellowTone/item?no=8" onMouseOver="processClick(2)" onMouseOut="upMenu(2)">ITEM</a>
                 <ul class="smallMenu" onMouseOver="processClick(2)" onMouseOut="upMenu(2)">
-                    <li> <a href="item.do?action=dress" >Dress</a></li> 
-                    <li> <a href="item.do?action=tuxedo" >Tuxedo</a></li>
-                    <li> <a href="item.do?action=accessory" >Acessory</a></li> 
+                    <li> <a href="/MellowTone/item?no=8" >Dress</a></li> 
+                    <li> <a href="/MellowTone/item?no=9" >Tuxedo</a></li>
+                    <li> <a href="/MellowTone/item?no=10" >Acessory</a></li> 
                 </ul>
                 </li>
         <li><a href="gallery.do?action=1" onMouseOver="processClick(3)" onMouseOut="upMenu(3)">GALLERY</a>
