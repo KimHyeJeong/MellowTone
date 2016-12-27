@@ -22,8 +22,8 @@
       order by no
     </select>
     <select id="select_mypage" resultType="sidebar">
-    	select name, url
-    	from sidebar_mypage
-    	order by no
+       select name, url
+       from sidebar_mypage
+       order by no
     </select>
 </mapper>

@@ -155,9 +155,9 @@ insert into sidebar_gallery values (sidebar_seq.nextval,'Outer Snap','./gallery.
 --사이드바 마이페이지
 drop table sidebar_mypage;
 create table sidebar_mypage(
-	no number primary key,
-	name varchar2(20) not null,
-	url varchar2(40) not null
+   no number primary key,
+   name varchar2(20) not null,
+   url varchar2(40) not null
 );
 
 insert into sidebar_mypage values (sidebar_seq.nextval,'회원정보 확인','./mypage.do?action=check');
