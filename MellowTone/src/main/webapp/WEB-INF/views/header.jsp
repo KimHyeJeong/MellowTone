@@ -151,7 +151,7 @@ function logout(){
 <div id="header" align="center">
 <div id="logo" align="center"><a href="/MellowTone/main"><img src="/resources/image/logo.png" width="300" height="150" /></a></div>
 <div id="member">
-<%
+<%-- <%
 if( session.getAttribute("id")==null){ %>
    <a href="mypage.do?action=login">Login</a>&nbsp;&nbsp;&nbsp;
    <a href="mypage.do?action=join">Join</a>&nbsp;&nbsp;&nbsp;
@@ -160,7 +160,7 @@ if( session.getAttribute("id")==null){ %>
    <a href="#" onclick="logout()">Logout</a>&nbsp;&nbsp;&nbsp;
    <a href="mypage.do?action=check">Mypage</a>&nbsp;&nbsp;&nbsp;
    
-<%} %>
+<%} %> --%>
 </div>
 </div>
 <div id="navi">
@@ -173,12 +173,12 @@ if( session.getAttribute("id")==null){ %>
                     <li> <a href="#photographer">PhotoGrapher</a></li>
                 </ul>   
                 </li>    
-       <li><a href="picture.do?action=regular&no=1" onMouseOver="processClick(1)" onMouseOut="upMenu(1)">PICTURE</a>
+       <li><a href="/MellowTone/picture?no=4" onMouseOver="processClick(1)" onMouseOut="upMenu(1)">PICTURE</a>
                 <ul class="smallMenu" onMouseOver="processClick(1)" onMouseOut="upMenu(1)">
-                    <li> <a href="picture.do?action=regular&no=1" >Regular Snap</a></li> 
-                    <li> <a href="picture.do?action=natural&no=2" >Natural Light Snap</a></li>
-                    <li> <a href="picture.do?action=studio&no=3" >Studio Snap</a></li> 
-                    <li> <a href="picture.do?action=outer&no=4" >Outer Snap</a></li> 
+                    <li> <a href="/Mellow/picture?no=4" >Regular Snap</a></li> 
+                    <li> <a href="/Mellow/picture?no=5" >Natural Light Snap</a></li>
+                    <li> <a href="/Mellow/picture?no=6" >Studio Snap</a></li> 
+                    <li> <a href="/Mellow/picture?no=7" >Outer Snap</a></li> 
                 </ul>
                 </li>
         <li><a href="item.do?action=dress" onMouseOver="processClick(2)" onMouseOut="upMenu(2)">ITEM</a>
