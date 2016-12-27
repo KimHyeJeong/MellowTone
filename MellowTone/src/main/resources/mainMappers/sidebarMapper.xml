@@ -21,6 +21,11 @@
       from sidebar_picture
       order by no
     </select>
+    <select id="select_community" resultType="sidebar">
+      select name, url
+      from sidebar_community
+      order by no
+    </select>
     <select id="select_mypage" resultType="sidebar">
        select name, url
        from sidebar_mypage

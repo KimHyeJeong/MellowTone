@@ -213,6 +213,95 @@ insert into gallery values (outer_req.nextval,14 ,'야외 스냅', '/resources/galle
 insert into gallery values (outer_req.nextval,14 ,'야외 스냅', '/resources/gallery_image/outer_4.png', '/resources/gallery_slide_image/outer_s4.png', null);
 
 
+--커뮤니티 사이드바
+
+drop table sidebar_community;
+create table sidebar_community(
+	no number primary key,
+	name varchar2(30) not null,
+	url varchar2(40) not null
+);
+insert into sidebar_community values (sidebar_seq.nextval,'Notice','/MellowTone/notice');
+insert into sidebar_community values (sidebar_seq.nextval,'Q&A','/MellowTone/faq');
+insert into sidebar_community values (sidebar_seq.nextval,'Review','/MellowTone/review');
+
+--여기까지 DB돌리셔도됩니댱
+
+
+--공지
+drop sequence notice_seq;
+create sequence notice_seq
+start with 1
+increment by 1;
+
+drop table notice;
+create table notice(
+	no number primary key,
+	title varchar2(50) not null,
+	gdate date not null,
+	contents long not null
+);
+
+insert into notice values (notice_seq.nextval, '공지1', sysdate, '내용1');
+insert into notice values (notice_seq.nextval, '공지2', sysdate, '내용2');
+insert into notice values (notice_seq.nextval, '공지3', sysdate, '내용3');
+insert into notice values (notice_seq.nextval, '공지4', sysdate, '내용4');
+insert into notice values (notice_seq.nextval, '공지5', sysdate, '내용5');
+insert into notice values (notice_seq.nextval, '공지6', sysdate, '내용6');
+insert into notice values (notice_seq.nextval, '공지7', sysdate, '내용7');
+insert into notice values (notice_seq.nextval, '공지8', sysdate, '내용8');
+insert into notice values (notice_seq.nextval, '공지9', sysdate, '내용9');
+
+--리뷰
+drop sequence review_seq;
+create sequence review_seq
+   start with 1
+   increment by 1
+   nocycle
+   nocache;
+
+drop table review;
+create table review(
+	no number primary key,
+	title varchar2(50) not null,
+	gdate date not null,
+	contents long not null,
+	writer varchar2(20) not null,
+	image varchar2(100)
+);
+
+insert into review values (review_seq.nextval, '리뷰1', sysdate, '사진0', '작성자', './upload/jh3.png');
+insert into review values (review_seq.nextval, '리뷰2', sysdate, '사진x', '작성자', null);
+insert into review values (review_seq.nextval, '리뷰3', sysdate, '내용', '작성자', './upload/jh3.png');
+insert into review values (review_seq.nextval, '리뷰4', sysdate, '사진x', '작성자', null);
+insert into review values (review_seq.nextval, '리뷰5', sysdate, '사진x', '작성자', null);
+insert into review values (review_seq.nextval, '리뷰6', sysdate, '내용', '작성자', './upload/jh3.png');
+
+--Q&A
+drop sequence faq_seq;
+create sequence faq_seq
+   start with 1
+   increment by 1
+   nocycle
+   nocache;
+   
+drop table faq;
+create table faq(
+	no number primary key,
+	title varchar2(50) not null,
+	gdate date not null,
+	contents long not null,
+	writer varchar2(20) not null,	
+	visible varchar2(1) not null,
+	category varchar2(30) not null
+);
+
+insert into faq values (faq_seq.nextval, '자주묻는 질문1', sysdate, '내용', '박재현', '1','날짜/시간');
+insert into faq values (faq_seq.nextval, '자주묻는 질문2', sysdate, '내용', '작성자1', '1','예약/변경');
+insert into faq values (faq_seq.nextval, '자주묻는 질문3', sysdate, '내용', '작성자2', '0','환불');
+insert into faq values (faq_seq.nextval, '자주묻는 질문4', sysdate, '내용', '작성자3', '0','환불');
+insert into faq values (faq_seq.nextval, '자주묻는 질문5', sysdate, '내용', '작성자4', '0','날짜/시간');
+insert into faq values (faq_seq.nextval, '자주묻는 질문6', sysdate, '내용', '작성자5', '1','기타');
 
 
 --사이드바 마이페이지

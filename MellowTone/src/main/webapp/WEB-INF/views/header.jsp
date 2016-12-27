@@ -203,11 +203,11 @@ if( session.getAttribute("id")==null){ %>
                     <li> <a href="reservation.do?" >Confirmation</a></li>
                 </ul>
                 </li>
-        <li><a href="notice.do?action=notice" onMouseOver="processClick(5)" onMouseOut="upMenu(5)">COMMUNITY</a>
+        <li><a href="/MellowTone/notice" onMouseOver="processClick(5)" onMouseOut="upMenu(5)">COMMUNITY</a>
                  <ul class="smallMenu" onMouseOver="processClick(5)" onMouseOut="upMenu(5)">
-                    <li> <a href="notice.do?action=notice" >Notice</a></li> 
-                    <li> <a href="faq.do?action=qa" >Q&amp;A</a></li>
-                    <li> <a href="review.do?action=review" >Review</a></li> 
+                    <li> <a href="/MellowTone/notice" >Notice</a></li> 
+                    <li> <a href="/MellowTone/faq" >Q&amp;A</a></li>
+                    <li> <a href="/MellowTone/review" >Review</a></li> 
                 </ul>
                 </li>
     </ul>

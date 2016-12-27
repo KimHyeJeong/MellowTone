@@ -41,4 +41,9 @@ public class SidebarDAOImpl implements SidebarDAO {
 		return session.selectList("sidebar.select_mypage");
 	}
 
+	@Override
+	public List<SidebarVO> select_community() throws Exception {
+		return session.selectList("sidebar.select_community");
+	}
+
 }

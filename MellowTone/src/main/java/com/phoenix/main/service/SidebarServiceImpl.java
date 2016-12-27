@@ -40,4 +40,9 @@ public class SidebarServiceImpl implements SidebarService {
 		return dao.select_mypage();
 	}
 
+	@Override
+	public List<SidebarVO> select_community() throws Exception {
+		return dao.select_community();
+	}
+
 }
