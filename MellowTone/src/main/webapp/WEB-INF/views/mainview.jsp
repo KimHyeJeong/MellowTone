@@ -93,6 +93,7 @@ html {
    function a1(no, size) {
       num = no;
       total = size;
+      alert("no = "+no+"size = "+size);
       
       if (num == 1) {
          $('#prev_bt').hide();
@@ -126,11 +127,6 @@ html {
         }
    }
 
-   $("#bigimage").change(function(){
-      alert("체크");
-
-   });
-   
    function fly() {
       document.getElementById("popup1").style.display = "none";
       document.getElementById("bigimage").style.display = "none";
@@ -139,8 +135,6 @@ html {
 
    function prev_bt() {
       num--;
-      //alert('prev_bt: ' + num)
-      //alert('total: ' + total)
 
       if (num < 1) {
          num++;
@@ -163,8 +157,6 @@ html {
 
    function next_bt() {
       num++;
-      //alert('next_bt: ' + num)
-      //alert('total: ' + total)
 
       if (num > total) {
          num--;

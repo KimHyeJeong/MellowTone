@@ -193,7 +193,6 @@ insert into gallery values (gallery_seq.nextval,14 ,'야외 스냅', '/resources/gal
 
 
 
-
 --사이드바 마이페이지
 drop table sidebar_mypage;
 create table sidebar_mypage(
