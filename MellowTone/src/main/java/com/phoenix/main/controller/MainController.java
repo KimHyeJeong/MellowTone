@@ -176,6 +176,24 @@ public class MainController {
 	   return "mainview";
    }
    
+   @RequestMapping("/findId")
+   public String findId(Model model)throws Exception{
+	   model.addAttribute("body","./join/search_id.jsp");
+	   
+	   return "mainview";
+   }
+   
+   @RequestMapping("/findPass")
+   public String findPass(Model model)throws Exception{
+	   model.addAttribute("body","./join/search_pass.jsp");
+	   
+	   return "mainview";
+   }
+   
+  
+   
+   
+   
    
 
 }

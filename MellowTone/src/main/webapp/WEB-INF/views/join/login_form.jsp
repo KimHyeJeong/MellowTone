@@ -70,8 +70,8 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><a
-						href="mypage.do?action=findId" style="font-size: 13px;">아이디</a>/<a
-						href="mypage.do?action=findPass" style="font-size: 13px;"> 비밀번호 찾기</a> <br> <a
+						href="/MellowTone/findId" style="font-size: 13px;">아이디</a>/<a
+						href="/MellowTone/findPass" style="font-size: 13px;"> 비밀번호 찾기</a> <br> <a
 						href="/MellowTone/join" style="font-size: 13px;">회원가입</a></td>
 				</tr>
                  <tr height="200px"></tr>

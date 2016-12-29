@@ -1,5 +1,7 @@
 package com.phoenix.main.service;
 
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -16,6 +18,17 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void insert(MemberVO vo) throws Exception {
 		dao.insert(vo);
+	}
+
+	@Override
+	public MemberVO login(String id, String password) throws Exception {
+		
+		return dao.login(id, password);
+	}
+
+	@Override
+	public MemberVO select(String id) throws Exception {
+		return dao.select(id);
 	}
 
 }

@@ -121,19 +121,19 @@
 	}
 		
 		function idCheck(){
-			window.open('./join/confirmid_check.jsp','check','width=400,height=200,top=80,left=800');
+			window.open('${pageContext.request.contextPath}/join/confirmid_check','check','width=600,height=400,top=80,left=800');
 			
 		}
 		
 		function zipCheck(){
-			window.open('./join/zip_check.jsp','zipcheck','width=600,height=300,top=80,left=680');
+			window.open('${pageContext.request.contextPath}/join/zip_check','zipcheck','width=600,height=300,top=80,left=680');
 		}
 		
 	</script>
 </head>
 <body>
 	<center>
-		<form action="mypage.do?action=insert" method="post" name="Jfrm">
+		<form action="/Main/insert" method="post" name="Jfrm">
 			<table  cellpadding="8"  style=" border-collapse:collapse; line-height:50px;" width="900px">
 				<tr style="font-size: 30px; font-weight: bold;"><td class="border2" colspan="2" height="110px" align="center">회원가입</td></tr>
 				<tr>

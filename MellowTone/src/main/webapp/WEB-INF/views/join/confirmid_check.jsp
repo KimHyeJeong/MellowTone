@@ -27,7 +27,7 @@ body{
 </head>
 <body>
 	<center>
-		<form action="./Id_check2.jsp" method="post" name=frm>
+		<form action="/join/Id_check2" method="post" name=frm>
 			<table cellpadding="5" style="margin-top: 30px;">
 				<tr height="50px">
 					<td>아이디 :</td>

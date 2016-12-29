@@ -6,5 +6,6 @@
 		<typeAlias type="com.phoenix.main.domain.PictureVO" alias="picture"/>
 		<typeAlias type="com.phoenix.main.domain.ItemVO" alias="item"/>
 		<typeAlias type="com.phoenix.main.domain.GalleryVO" alias="gallery"/>
+		<typeAlias type="com.phoenix.main.domain.MemberVO" alias="member"/>
 	</typeAliases>
 </configuration>
