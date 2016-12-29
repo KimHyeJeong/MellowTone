@@ -139,7 +139,7 @@ function upMenu(el){
 }//마우스 벗어날 떄
 
 function logout(){
-	   location.href="./join/logout.jsp";
+	   location.href="${pageContext.request.contextPath}/join/logout";
 	}
 
 </script>
@@ -152,13 +152,13 @@ function logout(){
 <div id="logo" align="center"><a href="/MellowTone/main"><img src="/resources/image/logo.png" width="300" height="150" /></a></div>
 <div id="member">
  <%
-if( session.getAttribute("id")==null){ %>
+if( session.getAttribute("login")==null){ %>
    <a href="/MellowTone/login">Login</a>&nbsp;&nbsp;&nbsp;
    <a href="/MellowTone/join">Join</a>&nbsp;&nbsp;&nbsp;
 <%}else {%> 
-   <%= "♥ "+ session.getAttribute("id")+"님 환영합니다 ♥"%>&nbsp;&nbsp;&nbsp;&nbsp;
+   <%= "♥ " %> ${login.name} <%="님 환영합니다 ♥" %>&nbsp;&nbsp;&nbsp;&nbsp;
    <a href="#" onclick="logout()">Logout</a>&nbsp;&nbsp;&nbsp;
-   <a href="mypage.do?action=check">Mypage</a>&nbsp;&nbsp;&nbsp;
+   <a href="/MellowTone/mypage">Mypage</a>&nbsp;&nbsp;&nbsp;
    
 <%} %>
 </div>

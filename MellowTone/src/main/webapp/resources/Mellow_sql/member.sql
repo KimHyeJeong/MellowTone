@@ -19,4 +19,8 @@ create sequence member_seq
    nocycle
    nocache;
 
+   
+insert into member values(member_seq.nextval,'boxer1992','1234','1234','채효원','440-321','서울시 금천구 가산동','신한이노플렉스','010-7393-1976','chw120424@naver.com');   
+   
+   
 select * from member;

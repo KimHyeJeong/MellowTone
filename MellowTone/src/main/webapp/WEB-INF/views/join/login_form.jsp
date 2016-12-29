@@ -25,8 +25,9 @@
 }
 </style>
 
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
+
 	function cancel() {
 		location.href = "/MellowTone/main";
 	}
@@ -41,15 +42,28 @@
 		}else if(pass.trim()==''){
 			alert("비밀번호를 입력해주세요");
         	document.frm.pass.focus();
-		}else{
-			document.frm.submit();
 		}
+		
+		$.ajax({
+			type:'post',
+			async:true,
+			url:'${pageContext.request.contextPath}/Main/login',
+			data:{
+				id:$('#id').val(),
+				password:$('#password').val()
+			},
+			success:function(result){
+				if(result == "SUCCESS")
+					alert("로그인 성공!!");
+					location.href="/MellowTone/main";
+			}
+		});
 	}
 </script>
 </head>
 <body>
 	<center>
-		<form method="post" action="/MellowTone/main" name="frm">
+		<form method="post" action="/Main/login" name="frm">
 			<table cellpadding="8" style="border-collapse: collapse; font-size: 18px;"
 				width="900px"  >
 				<tr style="font-size: 30px; font-weight: bold;">
@@ -57,11 +71,11 @@
 				</tr>
 				<tr>
 					<td width="360px" align="right">아이디</td>
-					<td><input type="text" class="input_text"  name="id"></td>
+					<td><input type="text" class="input_text"  name="id" id="id"></td>
 				</tr>
 				<tr>
 					<td align="right">비밀번호</td>
-					<td><input type="password" class="input_text" name="pass"></td>
+					<td><input type="password" class="input_text" name="pass" id="password"></td>
 				</tr>
 				<tr>
 					<td height="50px" colspan="2" align="center"><input type="button"

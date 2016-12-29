@@ -29,4 +29,7 @@ public class JoinController {
 		   request.setAttribute("list",list);
 		
 	}
+	
+	@RequestMapping("/logout")
+	public void logout()throws Exception{}
 }
