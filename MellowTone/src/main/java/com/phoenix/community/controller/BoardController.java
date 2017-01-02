@@ -24,7 +24,7 @@ public class BoardController {
 	@RequestMapping("/boardlist")
 	public String listPage(@ModelAttribute("cri") SearchCriteria cri ,Model model)throws Exception{
 		model.addAttribute("list", service.select_list(cri));
-		List<BoardVO> boardvo = service.select_list(cri);
+		List<BoardVO> board = service.select_list(cri);
 		
 		PageMaker maker = new PageMaker();
 		maker.setCri(cri);

@@ -105,24 +105,24 @@ $(document).ready(function(){
                                  </tr>
                               </thead>
                               <tbody>
-                              <c:forEach items="${list}" var="boardVO">
+                              <c:forEach items="${list}" var="board">
                                  <tr>
-                                    <td class="num" nowrap="nowrap">${boardVO.bno}</td>
+                                    <td class="num" nowrap="nowrap">${board.bno}</td>
                                     <td class="subject">
-                                       <a href='/phonefo/boardpage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}&tno=${cri.tno}'>
-                                          ${boardVO.title}[${boardVO.replycnt}]</a>
-                                       <c:if test="${boardVO.image!=null}">
+                                       <a href='/phonefo/boardpage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${board.bno}&tno=${cri.tno}'>
+                                          ${board.title}[${board.replycnt}]</a>
+                                       <c:if test="${board.image!=null}">
                                            <img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="11" height="11" alt="사진첨부" class="icon_file_photo">
                                         </c:if>
                                        <!-- <img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="8" height="12" alt="새글" class="icon_new"> -->
                                     </td>
                                     <td class="nick" style="text-align: center;">
-                                       ${boardVO.writer}
+                                       ${board.writer}
                                     </td>
                                     <td class="date" nowrap="nowrap">
-                                    <fmt:formatDate value="${boardVO.regdate}" pattern="yyyy-MM-dd"/></td>
-                                    <td class="count" nowrap="nowrap">${boardVO.viewcnt}</td>
-<%--                                     <td class="recommend_cnt" nowrap="nowrap">${boardVO.goodcnt}</td> --%>
+                                    <fmt:formatDate value="${board.regdate}" pattern="yyyy-MM-dd"/></td>
+                                    <td class="count" nowrap="nowrap">${board.viewcnt}</td>
+<%--                                     <td class="recommend_cnt" nowrap="nowrap">${board.goodcnt}</td> --%>
                                  </tr>
                                  </c:forEach>
                               </tbody>
