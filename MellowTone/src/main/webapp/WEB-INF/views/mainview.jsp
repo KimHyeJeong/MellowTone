@@ -93,7 +93,6 @@ html {
    function a1(no, size) {
       num = no;
       total = size;
-      alert("no = "+no+"size = "+size);
       
       if (num == 1) {
          $('#prev_bt').hide();

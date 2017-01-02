@@ -86,30 +86,6 @@ public class MainController {
       return "mainview";
    }
    
-   @RequestMapping("/notice")
-   public String notice(Model model)throws Exception{
-	  model.addAttribute("title", "Community");
-	  model.addAttribute("list", sidebar_service.select_community());
-      model.addAttribute("body","./community/NoticePage.jsp");
-      return "mainview";
-   }
-   
-   @RequestMapping("/faq")
-   public String faq(Model model)throws Exception{
-	  model.addAttribute("title", "Community");
-	  model.addAttribute("list", sidebar_service.select_community());
-      model.addAttribute("body","./community/FaqPage.jsp");
-      return "mainview";
-   }
-   
-   @RequestMapping("/review")
-   public String review(Model model)throws Exception{
-	  model.addAttribute("title", "Community");
-	  model.addAttribute("list", sidebar_service.select_community());
-      model.addAttribute("body","./community/ReviewPage.jsp");
-      return "mainview";
-   }
-   
    @RequestMapping("/mypage")
    public String mypage(Model model)throws Exception{
       
