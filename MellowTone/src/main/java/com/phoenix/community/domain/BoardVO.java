@@ -12,15 +12,7 @@ public class BoardVO {
 	 private String writer;
 	 private Date regdate;
 	 private int viewcnt;
-	 
-	 
-	 
-	@Override
-	public String toString() {
-		return "BoardVO [bno=" + bno + ", tno=" + tno + ", title=" + title + ", content=" + content + ", image=" + image
-				+ ", replycnt=" + replycnt + ", writer=" + writer + ", regdate=" + regdate + ", viewcnt=" + viewcnt
-				+ "]";
-	}
+	
 	public int getBno() {
 		return bno;
 	}

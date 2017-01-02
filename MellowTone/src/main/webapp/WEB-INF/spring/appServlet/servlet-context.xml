@@ -32,6 +32,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.phoenix.main" />
+	<context:component-scan base-package="com.phoenix.community" />
 	
 	
 	

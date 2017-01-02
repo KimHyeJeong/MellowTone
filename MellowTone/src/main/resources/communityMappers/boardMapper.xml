@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="board">
 	<!-- 게시판 전체 리스트 출력 -->
-	<select id="select_list" resultType="board">
+	<select id="select_list" parameterType="int" resultType="board">
 		select
 		bno,title,content,writer,regdate,viewcnt,image,replycnt
 		from mellow_board
@@ -11,21 +11,21 @@
 	</select>
 	
 	<!-- 커뮤니티 타입 검색 -->
-	<select id="select_title" resultType="String">
+	<select id="select_title" parameterType="int" resultType="String">
 		select title
 		from mellow_communitytype
 		where tno = #{tno}
 	</select>
 	
 	<!-- 페이지 검색 -->
-	<select id="select_page" resultType="board">
+	<select id="select_page" parameterType="int" resultType="board">
 		select bno, title, content, writer, regdate, viewcnt, image, replycnt
 		from mellow_board
 		where bno = #{bno}
 	</select>
 	
 	<!-- 리스트카운트 검색 -->
-	<select id="listcount" resultType="int">
+	<select id="listcount" parameterType="int" resultType="int">
 		select count(bno)
 		from mellow_board
 		where tno=#{tno}
