@@ -2,7 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
@@ -32,7 +34,9 @@
    </bean>
    
    <!-- DAOImpl 클래스 객체 등록 -->
-    <!-- <context:component-scan base-package="com.phoenix.main.persistence"/> -->
+   <context:component-scan base-package="com.phoenix.main.persistence"/> 
+   <context:component-scan base-package="com.phoenix.community.persistence"/> 
    <!-- 비지니스객체 등록 -->
-   <!-- <context:component-scan base-package="com.phoenix.main.service"/> -->
+   <context:component-scan base-package="com.phoenix.main.service"/>
+   <context:component-scan base-package="com.phoenix.community.service"/>
 </beans>
