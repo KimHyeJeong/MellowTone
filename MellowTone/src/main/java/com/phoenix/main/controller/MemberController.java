@@ -38,11 +38,11 @@ public class MemberController {
 	@RequestMapping("/login")
 	public @ResponseBody String login(HttpSession session, String id, String password)throws Exception{
 		String result="FAIL";
+		System.out.println("password="+password);
+		String dpass = service.select(id).getPassword();
+		System.out.println("dpass="+dpass);
 		
-		/*String dpass = service.select(id).getPassword();
-		System.out.println("dpass="+dpass);*/
-		
-		if(password.equals("1234")){
+		if(password.equals(dpass)){
 			
 			result="SUCCESS";
 			
