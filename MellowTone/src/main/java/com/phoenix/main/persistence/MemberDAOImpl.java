@@ -34,6 +34,11 @@ public class MemberDAOImpl implements MemberDAO {
 		return sqlSession.selectOne("member.select", id);
 	}
 
+	@Override
+	public MemberVO check(String id) throws Exception {
+		return sqlSession.selectOne("member.check", id);
+	}
+
 	
 	
 }

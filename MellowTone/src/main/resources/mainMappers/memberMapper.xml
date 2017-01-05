@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="member">
   <insert id="insert">
-  	insert into member values (member_seq.nextval,#id#,#password#,#password_ck#,#name#,#post#,#address1#,#address2#,#phone#,#email#)
+  	insert into member values (member_seq.nextval,#{id},#{password},#{password_ck},#{name},#{post},#{address1},#{address2},#{phone},#{email})
   </insert>
   
   <select id="login" resultType="member">
@@ -13,6 +13,12 @@
   <select id="select" resultType="member">
   	select password
   	from member
-  	where id=#id#
+  	where id=#{id}
+  </select>
+  
+  <select id="check" resultType="member">
+  	select *
+  	from member
+  	where id=#{id}
   </select>
 </mapper>

@@ -35,7 +35,7 @@ request.setAttribute("list",list);
    }
 </style>
 
-<script type="text/javascript" src="../js/jquery-1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
    <script type="text/javascript">
       function zip_put(i){
          
@@ -54,7 +54,7 @@ request.setAttribute("list",list);
 </head>
 <body>
     <center>
-   <form action="/MellowTone/zip_check" name=Zfrm >
+   <form action="./zip_check" name=Zfrm >
       주소검색 : <input type="text" name="addr" class="input_text" /> &nbsp;<input type="submit" class="button1" value="검색"><br>
       <p style="font-size: 14px;">*예) 서울특별시 금천구, 인천광역시 서구와(과) 같이 적어주시기 바랍니다.</p>
       

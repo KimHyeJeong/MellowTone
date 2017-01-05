@@ -170,7 +170,7 @@
             </tr>
             <tr height="50px"></tr>
 				<tr>
-					<td colspan="2" align="center"><input type="button" value="변경" onclick="check()"> <input type="reset" value="취소" onclick="cancel()"><br>
+					<td colspan="2" align="center"><input type="button" class="button1" value="변경" onclick="check()"> <input type="reset" class="button1" value="취소" onclick="cancel()"><br>
 				</tr>
 			</table>
 		</form>

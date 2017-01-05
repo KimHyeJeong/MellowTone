@@ -115,6 +115,7 @@
 			alert("핸드폰 번호를 확인하세요");
 			document.Jfrm.phone1.focus();
 		}else{
+			alert("회원가입에 성공하였습니다.");
 			document.Jfrm.submit();
 		}
 		
@@ -133,7 +134,7 @@
 </head>
 <body>
 	<center>
-		<form action="/Main/insert" method="post" name="Jfrm">
+		<form action="/MellowTone/login" method="post" name="Jfrm">
 			<table  cellpadding="8"  style=" border-collapse:collapse; line-height:50px;" width="900px">
 				<tr style="font-size: 30px; font-weight: bold;"><td class="border2" colspan="2" height="110px" align="center">회원가입</td></tr>
 				<tr>

@@ -1,13 +1,16 @@
 package com.phoenix.main.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.phoenix.main.domain.MemberVO;
 import com.phoenix.main.service.GalleryService;
 import com.phoenix.main.service.ItemService;
+import com.phoenix.main.service.MemberService;
 import com.phoenix.main.service.PictureService;
 import com.phoenix.main.service.SidebarService;
 
@@ -26,6 +29,9 @@ public class MainController {
    
    @Inject
    private GalleryService gallery_service;
+   
+   @Inject
+   private MemberService service;
    
    @RequestMapping("/main")
    public String main(Model model)throws Exception{
@@ -87,11 +93,28 @@ public class MainController {
    }
    
    @RequestMapping("/mypage")
-   public String mypage(Model model)throws Exception{
+   public String mypage(Model model,HttpSession session)throws Exception{
+	   String id = ((MemberVO)session.getAttribute("login")).getId();
       
       model.addAttribute("title","Mypage");
       model.addAttribute("list",sidebar_service.select_mypage());
-      model.addAttribute("body","./mypage/member_check.jsp");
+	
+		MemberVO vo = service.check(id);
+		String post = vo.getPost();
+		String phone = vo.getPhone();
+		String email = vo.getEmail();
+		
+		String[] firstPost = post.split("-");
+		String[] firstPhone = phone.split("-");
+		String[] firstEmail = email.split("@");
+		
+		session.setAttribute("LoginUser", vo );
+		session.setAttribute("firstPost", firstPost);
+		session.setAttribute("firstPhone", firstPhone);
+		session.setAttribute("firstEmail", firstEmail);
+		
+		model.addAttribute("body","./mypage/member_check.jsp");
+		
       return "mainview";
    }
    

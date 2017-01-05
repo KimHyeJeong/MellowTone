@@ -1,9 +1,7 @@
-
-<%@page import="com.phoenix.main.service.MemberServiceImpl"%>
-<%@page import="com.phoenix.main.domain.MemberVO"%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -42,17 +40,9 @@
 
 <body>
 	<center>
-		<%
-			String id = request.getParameter("id");
-			
-			MemberServiceImpl dao = new MemberServiceImpl();
-			MemberVO dto;
-			dto = dao.select(id);
-
-			if (dto != null) {
-		%>
+	<c:if test="${idcheck != null }">
 		<table width="280" border="0" cellpadding="5">
-			<t>
+			<tr>
 				<td align="center"><b>사용불가능</b></td>
 			</tr>
 			<tr>
@@ -61,10 +51,10 @@
 			</tr>
 		</table>
 		<input type="button" class="button2" value="닫기" onclick="checkId()">
-
-		<%
-			} else if (id.contains(" ")) {
-		%>
+	</c:if>
+	
+	<c:set var="id" />
+	<c:if test="${fn:contains(id,' ')}">
 		<table width="280" border="0" cellpadding="5">
 			<tr>
 				<td align="center"><b>사용불가능</b></td>
@@ -75,9 +65,8 @@
 			</tr>
 		</table>
 		<br> <input type="button" class="button2" value="창닫기" onclick="checkId()">
-		<%
-			} else if (id.length() < 5 || id.length() > 10) {
-		%>
+	</c:if>
+		<c:if test="${id.length() < 5 || id.length() > 10 }">
 		<table width="280" border="0" cellpadding="5">
 			<tr>
 				<td align="center"><b>사용불가능</b></td>
@@ -89,9 +78,9 @@
 			</tr>
 		</table>
 		<br> <input type="button" class="button2" value="창닫기" onclick="checkId()">
-		<%
-			} else {
-		%>
+		</c:if>
+		
+		<c:if test="${idcheck == null }">
 		<table width="280" border="0" cellpadding="5">
 			<tr>
 				<td align="center" height="40px"><b>사용가능</b></td>
@@ -103,12 +92,10 @@
 			
 			<tr><td align="center"><button class="button2" onclick="useId()">사용하기</button></td></tr>
 			<tr height="30px"></tr>
-			<tr><td align="center"><a style="text-decoration: none; color:#f333;" href="javascript:self.close()">창닫기</a></td></tr>
+	<!-- 	<tr><td align="center"><a style="text-decoration: none; color:#f333;" href="javascript:self.close()">창닫기</a></td></tr> -->
 		</table>
-		
-		<%
-			}
-		%>
+		</c:if>
+
 	</center>
 </body>
 </html>
