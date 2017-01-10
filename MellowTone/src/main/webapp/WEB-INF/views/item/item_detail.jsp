@@ -20,17 +20,19 @@
      cursor: pointer;
    }
 </style>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 
-<%-- function pocketWin(){
+ function pocketWin(){
          
       
-      <%if (session.getAttribute("id") != null){ %>
-         window.open('pocket.do?action=add_item&name=${item.name}','pocket', 'width=450,height=300,top=50,left=700,right=200');
+      <%if (session.getAttribute("login") != null){ %>
+         window.open('${pageContext.request.contextPath}/mypage/inpocket2?name=${item.name}','pocket', 'width=450,height=300,top=50,left=700,right=200');
       <%}else{ %>
-         alert("로그인을 해야 사용할수있습니다");   
+         alert("로그인을 해야 사용할수있습니다");
+         location.href="/MellowTone/login";
       <%}%>
-   } --%>
+   } 
 function cancel(no){
 	location.href="/MellowTone/item?no="+no;
 }

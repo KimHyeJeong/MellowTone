@@ -18,4 +18,9 @@ public class PictureDAOImpl implements PictureDAO {
 		return session.selectOne("picture.select", no);
 	}
 
+	@Override
+	public PictureVO select_picture(int no) throws Exception {
+		return session.selectOne("picture.select_picture", no);
+	}
+
 }

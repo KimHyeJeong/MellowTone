@@ -6,4 +6,10 @@
   	from picture
   	where no=#{no}
   </select>
+  
+  <select id="select_picture" resultType="picture">
+  	select name,price
+  	from picture
+  	where no=#{no}
+  </select>
 </mapper>

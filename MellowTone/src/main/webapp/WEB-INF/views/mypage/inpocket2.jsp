@@ -35,7 +35,7 @@
 		<table cellpadding="5">
 		<tr>
 			<td>
-				${picture.name} 상품이 장바구니에 상품이 정상적으로 담겼습니다.
+				${item.name} 상품이 장바구니에 상품이 정상적으로 담겼습니다.
 				
 			</td>
 		</tr>

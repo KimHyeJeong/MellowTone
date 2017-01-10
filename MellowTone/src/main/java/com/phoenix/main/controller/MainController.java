@@ -236,7 +236,7 @@ public class MainController {
 	   
 	   return "mainview";
    }
-   
+
    //회원가입쪽 
    @RequestMapping("/joinform")
    public String joinform(Model model)throws Exception{

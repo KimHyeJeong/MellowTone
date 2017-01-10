@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-   pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,6 +18,7 @@
      cursor: pointer;
    }
 </style>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
     
    function bt_click(){
@@ -30,16 +32,17 @@
          location.href="/MellowTone/gallery?no=14";
       }
    }
-   <%--
+   
    function pocketWin(){
-      var id =    "<%=session.getAttribute("id")%>";
+      var id ="${login.id}";
       
-      <%if (session.getAttribute("id") == null){ %>
-          alert("·Î±×ÀÎÀ» ÇØ¾ß »ç¿ëÇÒ¼öÀÖ½À´Ï´Ù");
+      <%if (session.getAttribute("login") == null){ %>
+          alert("ë¡œê·¸ì¸ì„ í•´ì•¼ ì‚¬ìš©í• ìˆ˜ìˆìŠµë‹ˆë‹¤");
+          location.href="/MellowTone/login";
       <%}else{%>
-            window.open('pocket.do?action=add_picture&no=${param.no}','pocket','width=450,height=300,top=50,left=700,right=200');
+            window.open('${pageContext.request.contextPath}/mypage/inpocket?no=${param.no}','pocket','width=450,height=300,top=50,left=700,right=200');
          <%}%>
-      } --%>
+      } 
 </script>
 </head>
 <body>
@@ -55,10 +58,10 @@
             
             <tr><td style="font-size:26px;" align="center"><strong>:) ${picture.name }</strong></td></tr>
             <tr><td height="150px" style="font-size:18px;" align="center">${picture.content }</td></tr>
-            <tr><td style="font-size:18px;" align="center">±İ¾× : ${picture.price }¿ø</td></tr>   
+            <tr><td style="font-size:18px;" align="center">ê¸ˆì•¡ : ${picture.price }ì›</td></tr>   
             <tr height="90px"><td align="center">
-               <input type="button" class="button2" value="Gallery ÀÌµ¿" onclick="bt_click()">&nbsp;
-                    <input type="button" class="button2" value="Àå¹Ù±¸´Ï" onclick="pocketWin()">
+               <input type="button" class="button2" value="Gallery ì´ë™" onclick="bt_click()">&nbsp;
+                    <input type="button" class="button2" value="ì¥ë°”êµ¬ë‹ˆ" onclick="pocketWin()">
             </td></tr>
             <tr height="100px"></tr>
          </table>

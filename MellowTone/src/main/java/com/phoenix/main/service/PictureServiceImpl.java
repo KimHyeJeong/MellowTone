@@ -18,4 +18,9 @@ public class PictureServiceImpl implements PictureService {
 		return dao.select(no);
 	}
 
+	@Override
+	public PictureVO select_picture(int no) throws Exception {
+		return dao.select_picture(no);
+	}
+
 }

@@ -9,9 +9,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.phoenix.main.domain.MemberVO;
+import com.phoenix.main.domain.PictureVO;
+import com.phoenix.main.service.ItemService;
 import com.phoenix.main.service.MemberService;
+import com.phoenix.main.service.PictureService;
 
 
 @Controller
@@ -20,6 +24,12 @@ public class MypageController {
 
 	@Inject
 	private MemberService service;
+	
+	@Inject
+	private PictureService picservice;
+	
+	@Inject
+	private ItemService Itemservice;
 	
 	@RequestMapping("/update")
 	public ResponseEntity<String> update(MemberVO vo,HttpServletRequest request)throws Exception{
@@ -41,6 +51,20 @@ public class MypageController {
 		entity=new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
 		
 		return entity;
+		
+	}
+	
+	@RequestMapping("/inpocket")
+	public void inpocket(Model model,@RequestParam("no") int no)throws Exception{
+		
+		model.addAttribute("picture", picservice.select_picture(no));
+		
+	}
+	
+	@RequestMapping("/inpocket2")
+	public void inpocket2(Model model,@RequestParam("name") String name)throws Exception{
+		
+		model.addAttribute("item", Itemservice.list_detail(name));
 		
 	}
 	
