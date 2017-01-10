@@ -15,7 +15,7 @@
 			
 
 			var pass = document.dfrm.pass.value;
-			
+			var mypass= '${dpass}';
 			alert("입력값:"+pass+"비밀번호:"+mypass);
 			
 			if(pass.trim()==''){
@@ -27,6 +27,7 @@
 				document.dfrm.pass.focus();
 	        }else{
 				document.dfrm.submit();
+				location.href="${pageContext.request.contextPath}/join/logout";
 	        }
 		}
 	</script>

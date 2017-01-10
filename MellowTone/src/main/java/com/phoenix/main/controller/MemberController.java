@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,7 +24,7 @@ public class MemberController {
 	private MemberService service;
 	
 	@RequestMapping("/insert")
-	public void insert(@RequestBody MemberVO vo, HttpServletRequest request)throws Exception{
+	public String insert(@RequestBody MemberVO vo, HttpServletRequest request,Model model)throws Exception{
 		String post = request.getParameter("zip1") + '-' + request.getParameter("zip2");
 
 		String phone = request.getParameter("phone1") + '-' + request.getParameter("phone2") + '-'
@@ -35,6 +36,8 @@ public class MemberController {
 				request.getParameter("address2"), phone, email);
 
 		service.insert(vo);
+		 model.addAttribute("body","./join/login_form.jsp");
+		 return "mainview";
 	}
 	
 	@RequestMapping("/login")

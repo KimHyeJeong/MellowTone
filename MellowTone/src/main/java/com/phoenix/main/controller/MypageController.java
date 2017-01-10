@@ -2,14 +2,17 @@ package com.phoenix.main.controller;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.phoenix.main.domain.MemberVO;
 import com.phoenix.main.service.MemberService;
+
 
 @Controller
 @RequestMapping("/mypage")
@@ -21,7 +24,7 @@ public class MypageController {
 	@RequestMapping("/update")
 	public ResponseEntity<String> update(MemberVO vo,HttpServletRequest request)throws Exception{
 		ResponseEntity<String> entity = null;
-		String id = ((MemberVO)request.getSession().getAttribute("login")).getId();
+		String id = request.getSession().getId();
 		
 		String post = request.getParameter("zip1") + '-' + request.getParameter("zip2");
 
@@ -29,11 +32,17 @@ public class MypageController {
 				+ request.getParameter("phone2");
 		String email = request.getParameter("email1") + '@' + request.getParameter("email2");
 		
-		vo = new MemberVO(0, request.getParameter("id"), request.getParameter("pass1"),
-				request.getParameter("pass2"), request.getParameter("name"), post, request.getParameter("address1"),
-				request.getParameter("address2"), phone, email);
-
-		vo = service.check(id);
+		vo= new MemberVO(Integer.parseInt(request.getParameter("no")),
+				id,
+				request.getParameter("pass1"),
+				request.getParameter("pass2"),
+				request.getParameter("username"),
+				post,
+				request.getParameter("address1"),
+				request.getParameter("address2"),
+				phone,
+				email);
+		
 		post = vo.getPost();
 		phone = vo.getPhone();
 		email = vo.getEmail();
@@ -47,14 +56,22 @@ public class MypageController {
 		request.setAttribute("firstPhone", firstPhone);
 		request.setAttribute("firstEmail", firstEmail);
 		
-		
-		System.out.println("¿©±â!");
 		service.update(vo);
-		System.out.println("¹Ù²ñ?");
 		entity=new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
-		System.out.println("‰ç´Ù!");
 		
 		return entity;
+		
+	}
+	
+	@RequestMapping("/deleteId")
+	public void deleteId(Model model, HttpSession session)throws Exception{
+		String id = ((MemberVO)session.getAttribute("login")).getId();
+		System.out.println("ID="+id);
+		String dpass = service.select(id).getPassword();
+		System.out.println("DPASS="+dpass);
+		
+		model.addAttribute("LoginUser",dpass);
+		service.delete(id);
 		
 	}
 }
