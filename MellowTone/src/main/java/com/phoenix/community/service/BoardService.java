@@ -10,4 +10,7 @@ public interface BoardService {
 	public String select_title(int tno)throws Exception;
 	public BoardVO select_page(int bno)throws Exception;
 	public int listCount(int tno)throws Exception;
+	public void insert(BoardVO board)throws Exception;
+	public void delete(int bno)throws Exception;
+	public void update(BoardVO board)throws Exception;
 }

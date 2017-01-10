@@ -207,6 +207,7 @@ html {
               || request.getAttribute("body").equals("./join/success_id.jsp")
               || request.getAttribute("body").equals("./join/search_pass.jsp")
               || request.getAttribute("body").equals("./join/success_pass.jsp")
+              || request.getAttribute("body").equals("./community/boardinput.jsp")
               ){ %>
            <td  align="center" colspan="2"><jsp:include page="${body}" flush="true"/></td>
         <%}else{ %>

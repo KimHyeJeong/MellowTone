@@ -31,8 +31,13 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.phoenix.main" />
-	<context:component-scan base-package="com.phoenix.community" />
+	<!-- 파일업로드 -->
+	<beans:bean id="multipartResolver" class ="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="10485760"></beans:property>
+	</beans:bean>
+	
+	<context:component-scan base-package="com.phoenix.main.controller" />
+	<context:component-scan base-package="com.phoenix.community.controller" />
 	
 	
 	

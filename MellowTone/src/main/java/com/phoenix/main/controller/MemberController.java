@@ -41,6 +41,7 @@ public class MemberController {
 	public @ResponseBody String login(HttpSession session, String id, String password)throws Exception{
 		String result="FAIL";
 		id = service.select(id).getId();
+		//System.out.println(id);
 		String dpass = service.select(id).getPassword();
 		
 		

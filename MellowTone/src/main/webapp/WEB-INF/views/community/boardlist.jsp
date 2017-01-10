@@ -1,31 +1,31 @@
-<%-- <%@page import="org.springframework.beans.factory.support.SecurityContextProvider"%> --%>
+<%@page import="org.springframework.beans.factory.support.SecurityContextProvider"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<%-- <%@ page session="true" %> --%>
+<%@ page session="true" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>글리스트</title>
-<link rel="stylesheet" type="text/css" href="/resources/css/jaehyuntest.css" title="blue" media="screen" />
+<!-- <link rel="stylesheet" type="text/css" href="/resources/css/jaehyuntest.css" title="blue" media="screen" />
 <link rel="stylesheet" type="text/css" href="http://s1.cafe.daumcdn.net/cafe/_c21_/css/mEr9/321/20161123175651.91/20161123175556.27/20160602174211.21.css?grpid=mEr9" />
 <link rel="stylesheet" href="http://s1.daumcdn.net/editor/releases/7.4.33-3/css/content_view.css" type="text/css" charset="utf-8"/>
-
+ -->
 <script type="text/javascript">
-/* var userid;
+var userid;
 $(document).ready(function(){
-   $('#btn_search').on("click",   function(event) {
+/*    $('#btn_search').on("click",   function(event) {
       self.location = "boardlist"
          + '${pageMaker.makeQuery(1)}'
          + "&searchType="
          + $("select option:selected").val()
          + "&keyword=" + $('#keywordInput').val()
          + "&tno=" + $('#tno').val();
-   });
-   $('#btn_search_mine').on("click",   function(event) {
+   }); */
+/*    $('#btn_search_mine').on("click",   function(event) {
       userid= "${sessionScope.userid}";
       if(userid=='')
          alert("로그인을 해야 사용할 수 있는 기능입니다.");
@@ -37,8 +37,8 @@ $(document).ready(function(){
          + "&keyword=" + userid
          + "&tno=" + $('#tno').val();
       }
-   });
-   $(".btn_icon_write").on("click", function(){
+   }); */
+/*    $(".btn_icon_write").on("click", function(){
       userid= "${sessionScope.userid}";
       if(userid=='')
          alert("로그인을 하고 사용하시기 바랍니다.");
@@ -46,17 +46,21 @@ $(document).ready(function(){
             var formObj = $("form[role='iniputform']");
             formObj.submit();
       }
-         });
-}); */
+         }); */
+   $(".write").on("click", function(){
+	   var formObj = $("form[role='iniputform']");
+       formObj.submit();
+   });
+});
 </script>
 
 </head>
 <body>
-  <%--  <form role="iniputform" action="boardinput" method="get">
+   <form role="iniputform" action="boardinput" method="get">
       <input type='hidden' id='tno' name='tno' value="${cri.tno}">
       <input type='hidden' name='page' value="${cri.page}">
       <input type='hidden' name='perPageNum' value="${cri.perPageNum}">
-   </form> --%>
+   </form>
    <center>
       <div class="container">
          <div id="primaryContent">
@@ -70,12 +74,8 @@ $(document).ready(function(){
                   <tr class="pos_rel">
                      <td class="lb" nowrap="">&nbsp;</td>
                      <td class="cb pos_rel">
-                        <!-- content start --> <a name="bbs_list_title"></a>
-                        <h3 class="title">
-                           <a href="bbs_list?grpid=mEr9&amp;mgrpid=&amp;fldid=LNQb"
-                              class="list_title_sub">${title}</a>
-                        </h3>
-<%--                         <c:if test="${ (sessionScope.userid !=null&&cri.tno<=3)|| (cri.tno>3&&sessionScope.userid =='admin')}">
+                        <!-- content start -->
+<%--                         <c:if test="${ (sessionScope.id !=null&&cri.tno>1)|| (cri.tno>=1&&sessionScope.id =='admin')}">
                         <div class="list_btn_areaT">
                            <a href="#"
                               onclick="caller('/_c21_/united_write?grpid=mEr9&amp;mgrpid=&amp;fldid=LNQb&amp;page=1'); return false;"
@@ -93,7 +93,7 @@ $(document).ready(function(){
                                  <col width="15%;">
                                  <col width="5%;">
                                  <col width="5%;">
-                              <caption>${title}</caption>
+                              <%-- <caption>${title}</caption> --%>
                               <thead>
                                  <tr>
                                     <th>글번호</th>
@@ -101,28 +101,27 @@ $(document).ready(function(){
                                     <th>글쓴이</th>
                                     <th nowrap="nowrap">작성일</th>
                                     <th nowrap="nowrap">조회</th>
-                                    <th nowrap="nowrap">추천</th>
+                                   <!--  <th nowrap="nowrap">추천</th> -->
                                  </tr>
                               </thead>
                               <tbody>
-                              <c:forEach items="${list}" var="board">
+                              <c:forEach items="${board}" var="boardVO">
                                  <tr>
-                                    <td class="num" nowrap="nowrap">${board.bno}</td>
+                                    <td class="num" nowrap="nowrap">${boardVO.bno}</td>
                                     <td class="subject">
-                                       <a href='/phonefo/boardpage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${board.bno}&tno=${cri.tno}'>
-                                          ${board.title}[${board.replycnt}]</a>
-                                       <c:if test="${board.image!=null}">
+                                       <a href='/MellowTone/boardpage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}&tno=${cri.tno}'>
+                                          ${boardVO.title}[${boardVO.replycnt}]</a>
+                                       <c:if test="${boardVO.image!=null}">
                                            <img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="11" height="11" alt="사진첨부" class="icon_file_photo">
                                         </c:if>
-                                       <!-- <img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="8" height="12" alt="새글" class="icon_new"> -->
                                     </td>
                                     <td class="nick" style="text-align: center;">
-                                       ${board.writer}
+                                       ${boardVO.writer}
                                     </td>
                                     <td class="date" nowrap="nowrap">
-                                    <fmt:formatDate value="${board.regdate}" pattern="yyyy-MM-dd"/></td>
-                                    <td class="count" nowrap="nowrap">${board.viewcnt}</td>
-<%--                                     <td class="recommend_cnt" nowrap="nowrap">${board.goodcnt}</td> --%>
+                                    <fmt:formatDate value="${boardVO.regdate}" pattern="yyyy-MM-dd"/></td>
+                                    <td class="count" nowrap="nowrap">${boardVO.viewcnt}</td>
+<%--                                     <td class="recommend_cnt" nowrap="nowrap">${boardVO.goodcnt}</td> --%>
                                  </tr>
                                  </c:forEach>
                               </tbody>
@@ -184,6 +183,7 @@ $(document).ready(function(){
                                  ><img src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif"
                                  width="37" height="21" alt="검색"></a>
                               <a   href="javascript:;" id="btn_search_mine">내가 쓴 글</a>
+                              <input type="button" class="write" value="글쓰기">
                            </div>
                            <!-- end cafeSearchBox -->
                         </div>

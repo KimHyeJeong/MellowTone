@@ -36,4 +36,19 @@ public class BoardServiceImpl implements BoardService {
 		return dao.listCount(tno);
 	}
 
+	@Override
+	public void insert(BoardVO board) throws Exception {
+		dao.insert(board);
+	}
+
+	@Override
+	public void delete(int bno) throws Exception {
+		dao.delete(bno);
+	}
+
+	@Override
+	public void update(BoardVO board) throws Exception {
+		dao.update(board);
+	}
+
 }
