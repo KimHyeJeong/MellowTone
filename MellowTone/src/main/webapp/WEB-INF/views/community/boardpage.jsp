@@ -329,7 +329,7 @@ function removereply(rno){
         <input type='hidden' name='page' value="${cri.page}">
         <input type='hidden' name='perPageNum' value="${cri.perPageNum}">
         <input type='hidden' name='searchType' value="${cri.searchType}">
-    	<input type='hidden' name='keyword' value="${cri.keyword}">
+     	<input type='hidden' name='keyword' value="${cri.keyword}">
     </form>
 	<form role="form" method="post" enctype="multipart/form-data" action="boardupdate">
 		                  
@@ -361,12 +361,12 @@ function removereply(rno){
 			<a href="javascript:;" id="listBtn">목록</a>
 			<c:if test="${prevbno!=null}">
 				<span class="bar2">|</span> 
-				<a href="/phonefo/boardpage?page=${cri.page}&perPageNum=${cri.perPageNum}&searchType=${cri.searchType }&keyword=${cri.keyword}&bno=${prevbno}&tno=${cri.tno}" class="prevBtn">
+				<a href="/MellowTone/boardpage?page=${cri.page}&perPageNum=${cri.perPageNum}&searchType=${cri.searchType }&keyword=${cri.keyword}&bno=${prevbno}&tno=${cri.tno}" class="prevBtn">
 				<span class="arrow">▲</span>윗글</a>
 			</c:if>
 			<c:if test="${nextbno!=null}">
 				<span class="bar2">|</span>
-				<a href="/phonefo/boardpage?page=${cri.page}&perPageNum=${cri.perPageNum}&searchType=${cri.searchType }&keyword=${cri.keyword}&bno=${nextbno}&tno=${cri.tno}" class="nextBtn">
+				<a href="/MellowTone/boardpage?page=${cri.page}&perPageNum=${cri.perPageNum}&searchType=${cri.searchType }&keyword=${cri.keyword}&bno=${nextbno}&tno=${cri.tno}" class="nextBtn">
 				<span class="arrow">▼</span>아랫글</a>
 			</c:if>
 			</span>
@@ -465,12 +465,12 @@ function removereply(rno){
 					</a>
 				</span>
 			</p>
-			<div id="shareMenu" class="fr">
+			<%-- <div id="shareMenu" class="fr">
 				<a class="bbs_recommend fl line_sub" href="javascript:;" id="goodBtn" style="height: 30px;">
 					<img src="http://i1.daumcdn.net/cafeimg/cf_img4/img/ico_recommend.gif" width="11" height="13" alt="추천하기">
 					<span id="recommendCnt" class="txt_point">${boardVO.goodcnt}</span>
 				</a>
-			</div>
+			</div> --%>
 		</div>
 
 

@@ -63,4 +63,22 @@
 		</if>
 		where bno=#{bno}
 	</update>
+	
+	<select id="select_prevbno" resultType="int">
+		select min(bno)
+		from mellow_board
+		where bno > #{bno}
+	</select>
+	
+	<select id="select_nextbno" resultType="int">
+		select max(bno)
+		from mellow_board
+		where bno  <![CDATA[<]]> #{bno}
+	</select>
+	
+	<update id="update_viewcnt">
+		<!-- 기존 타이틀과 내용에 대한 수정 -->
+		update mellow_board set viewcnt=(select viewcnt+1 from mellow_board where bno=#{bno})
+		where bno=#{bno}
+	</update>
 </mapper>

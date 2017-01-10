@@ -51,4 +51,19 @@ public class BoardServiceImpl implements BoardService {
 		dao.update(board);
 	}
 
+	@Override
+	public int select_prevbno(int bno) throws Exception {
+		return dao.select_prevbno(bno);
+	}
+
+	@Override
+	public int select_nextbno(int bno) throws Exception {
+		return dao.select_nextbno(bno);
+	}
+
+	@Override
+	public void update_viewcnt(int bno) throws Exception {
+		dao.update_viewcnt(bno);
+	}
+
 }

@@ -20,6 +20,7 @@ import com.phoenix.community.domain.BoardVO;
 import com.phoenix.community.domain.PageMaker;
 import com.phoenix.community.domain.SearchCriteria;
 import com.phoenix.community.service.BoardService;
+import com.phoenix.main.domain.MemberVO;
 import com.phoenix.main.service.SidebarService;
 
 @Controller
@@ -34,6 +35,7 @@ public class BoardController {
 	
 	@RequestMapping("/boardlist")
 	public String listPage(@ModelAttribute("cri") SearchCriteria cri ,Model model, int tno, HttpSession session)throws Exception{
+		//System.out.println(((MemberVO)session.getAttribute("login")).getId());
 		model.addAttribute("title", "Community");
 		model.addAttribute("semititle", service.select_title(tno));
 		model.addAttribute("list", sidebar_service.select_community());
@@ -61,9 +63,8 @@ public class BoardController {
 	@RequestMapping(value = "/boardinput", method = RequestMethod.POST)
 	public String inputpagePOST(HttpServletRequest request, MultipartFile file, BoardVO board, RedirectAttributes attr,
 			HttpSession session) throws Exception {
-
-		System.out.println(session.getAttribute("id"));
-		board.setWriter((String) session.getAttribute("id"));
+		String id = ((MemberVO)session.getAttribute("login")).getId();
+		board.setWriter(id);
 		
 		
 		//여기서부터
@@ -82,6 +83,27 @@ public class BoardController {
 		service.insert(board);
 
 		return "redirect:/MellowTone/boardlist?tno=" + board.getTno();
+	}
+	
+	@RequestMapping("/boardpage")
+	public String read(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model,HttpSession session) throws Exception {
+		int nextbno = service.select_nextbno(bno);
+		int prevbno = service.select_prevbno(bno);
+		if(nextbno!=0){
+			model.addAttribute("nextbno", nextbno);
+			model.addAttribute("nexttitle", service.select_title(nextbno));
+		}
+		if(prevbno!=0){
+			model.addAttribute("prevbno", prevbno);
+			model.addAttribute("prevtitle", service.select_title(prevbno));
+		}
+
+		service.update_viewcnt(bno);
+		BoardVO board = service.select_page(bno);
+
+		model.addAttribute("body", "./community/boardpage.jsp");
+		model.addAttribute(board);
+		return "mainview";
 	}
 
 }
