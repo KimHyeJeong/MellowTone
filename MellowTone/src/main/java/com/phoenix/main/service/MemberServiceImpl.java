@@ -41,4 +41,9 @@ public class MemberServiceImpl implements MemberService {
 		dao.update(vo);
 	}
 
+	@Override
+	public void delete(String id) throws Exception {
+		dao.delete(id);
+	}
+
 }

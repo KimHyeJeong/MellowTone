@@ -8,4 +8,5 @@ public interface MemberDAO {
 	public MemberVO select(String id)throws Exception;
 	public MemberVO check(String id)throws Exception;
 	public void update(MemberVO vo)throws Exception;
+	public void delete(String id)throws Exception;
 }

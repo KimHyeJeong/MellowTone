@@ -49,8 +49,10 @@
 			alert("이메일을 입력하세요");
 			document.Jfrm.email1.focus();
 		}else if(pass1!=pass2){
-			alert("비밀번호와 비밀번호확인이 같지 않습니다");
-			document.Jfrm.pass2.focus();
+			alert("비밀번호가 일치하지 않습니다.");
+			document.Jfrm.pass1.value="";
+			document.Jfrm.pass2.value="";
+			document.Jfrm.pass1.focus();
 		}else if(!passExp.test(pass1)){
 			alert("비밀번호는 5~10글자의 숫자,영문자만 사용가능합니다");
 			document.Jfrm.pass1.focus();
@@ -74,7 +76,7 @@
 		
 	}
 	function zipCheck(){
-		window.open('./join/zip_check.jsp','zipcheck','width=600,height=300,top=80,left=680');
+		window.open('${pageContext.request.contextPath}/join/zip_check','zipcheck','width=600,height=300,top=80,left=680');
 	}
 </script>
 

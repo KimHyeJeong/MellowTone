@@ -1,10 +1,12 @@
 package com.phoenix.main.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -126,9 +128,42 @@ public class MainController {
       return "mainview";
    }
    
+   @RequestMapping("/insert")
+	public void insert(@RequestBody MemberVO vo, HttpServletRequest request)throws Exception{
+		String post = request.getParameter("zip1") + '-' + request.getParameter("zip2");
+
+		String phone = request.getParameter("phone1") + '-' + request.getParameter("phone2") + '-'
+				+ request.getParameter("phone3");
+		String email = request.getParameter("email1") + '@' + request.getParameter("email2");
+
+		vo = new MemberVO(0, request.getParameter("id"), request.getParameter("pass1"),
+				request.getParameter("pass2"), request.getParameter("name"), post, request.getParameter("address1"),
+				request.getParameter("address2"), phone, email);
+
+		service.insert(vo);
+	}
+   
    @RequestMapping("/login")
-   public String login(Model model)throws Exception{
+   public String login(Model model,MemberVO vo,HttpServletRequest request)throws Exception{
 	   model.addAttribute("body","./join/login_form.jsp");
+	   
+	   return "mainview";
+   }
+   
+   @RequestMapping("/login2")
+   public String login2(Model model,MemberVO vo,HttpServletRequest request)throws Exception{
+	   String post = request.getParameter("zip1") + '-' + request.getParameter("zip2");
+	   
+	   String phone = request.getParameter("phone1") + '-' + request.getParameter("phone2") + '-'
+			   + request.getParameter("phone3");
+	   String email = request.getParameter("email1") + '@' + request.getParameter("email2");
+	   
+	   vo = new MemberVO(0, request.getParameter("id"), request.getParameter("pass1"),
+			   request.getParameter("pass2"), request.getParameter("name"), post, request.getParameter("address1"),
+			   request.getParameter("address2"), phone, email);
+	   service.insert(vo);
+	   model.addAttribute("body","./join/login_form.jsp");
+	   
 	   return "mainview";
    }
    
@@ -171,10 +206,16 @@ public class MainController {
    }
    
    @RequestMapping("/delete")
-   public String delete(Model model)throws Exception{
+   public String delete(Model model,HttpSession session)throws Exception{
+	   String id = ((MemberVO)session.getAttribute("login")).getId();
+	   String dpass = service.select(id).getPassword();
+	   
 	   model.addAttribute("title","Mypage");
 	   model.addAttribute("list",sidebar_service.select_mypage());
 	   model.addAttribute("body","./mypage/delete_check.jsp");
+	   
+	   model.addAttribute("dpass",dpass);
+	   service.delete(id);
 	   
 	   return "mainview";
    }

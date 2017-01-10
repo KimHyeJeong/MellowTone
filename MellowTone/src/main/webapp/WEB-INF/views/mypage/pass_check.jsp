@@ -12,7 +12,7 @@
 		
 		function passCheck(){	
 			var pass = document.pfrm.pass.value;
-			var mypass= ${LoginUser};
+			var mypass= '${LoginUser}';
 			
 			if(pass.trim()==''){
 	            alert("비밀번호를 입력해주세요");
