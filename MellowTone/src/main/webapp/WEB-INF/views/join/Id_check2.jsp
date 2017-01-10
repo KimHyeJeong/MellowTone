@@ -33,7 +33,7 @@
 
 	function checkId() {
 
-		location.href = "./confirmid_check.jsp";
+		location.href = "${pageContext.request.contextPath}/join/confirmid_check";
 	}
 </script>
 </head>
@@ -53,7 +53,7 @@
 		<input type="button" class="button2" value="닫기" onclick="checkId()">
 	</c:if>
 	
-	<c:set var="id" />
+	<%-- <c:set var="id" />
 	<c:if test="${fn:contains(id,' ')}">
 		<table width="280" border="0" cellpadding="5">
 			<tr>
@@ -65,8 +65,8 @@
 			</tr>
 		</table>
 		<br> <input type="button" class="button2" value="창닫기" onclick="checkId()">
-	</c:if>
-		<c:if test="${id.length() < 5 || id.length() > 10 }">
+	</c:if> --%>
+		<c:if test="${idcheck == null || id.length() < 5 || id.length() > 10 }">
 		<table width="280" border="0" cellpadding="5">
 			<tr>
 				<td align="center"><b>사용불가능</b></td>
@@ -80,7 +80,7 @@
 		<br> <input type="button" class="button2" value="창닫기" onclick="checkId()">
 		</c:if>
 		
-		<c:if test="${idcheck == null }">
+		<c:if test="${idcheck == null && id.length() >= 5 && id.length() <= 10}">
 		<table width="280" border="0" cellpadding="5">
 			<tr>
 				<td align="center" height="40px"><b>사용가능</b></td>

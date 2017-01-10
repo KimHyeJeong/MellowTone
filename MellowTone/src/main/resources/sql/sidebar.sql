@@ -221,9 +221,9 @@ create table sidebar_community(
 	name varchar2(30) not null,
 	url varchar2(40) not null
 );
-insert into sidebar_community values (sidebar_seq.nextval,'Notice','/MellowTone/notice');
-insert into sidebar_community values (sidebar_seq.nextval,'Q&A','/MellowTone/faq');
-insert into sidebar_community values (sidebar_seq.nextval,'Review','/MellowTone/review');
+insert into sidebar_community values (sidebar_seq.nextval,'Notice','/MellowTone/boardlist?tno=1');
+insert into sidebar_community values (sidebar_seq.nextval,'Q&A','/MellowTone/boardlist?tno=2');
+insert into sidebar_community values (sidebar_seq.nextval,'Review','/MellowTone/boardlist?tno=3');
 
 --여기까지 DB돌리셔도됩니댱
 

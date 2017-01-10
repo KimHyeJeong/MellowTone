@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원 탈퇴(비밀번호 입력)</title>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript">
 		function cancel(){
 			location.href="/MellowTone/check";
@@ -14,22 +15,33 @@
 		function passCheck(){
 			
 
-			var pass = document.dfrm.pass.value;
+			var password = document.dfrm.password.value;
 			var mypass= '${dpass}';
-			alert("입력값:"+pass+"비밀번호:"+mypass);
 			
-			if(pass.trim()==''){
+			if(password.trim()==''){
 	            alert("비밀번호를 입력해주세요");
-	            document.dfrm.pass.focus();
-	        }else if(pass!=mypass){
+	            document.dfrm.password.focus();
+	        }else if(password!=mypass){
 	        	alert("비밀번호를 확인해주세요");
-				document.dfrm.pass.value='';
-				document.dfrm.pass.focus();
-	        }else{
-				document.dfrm.submit();
-				location.href="${pageContext.request.contextPath}/join/logout";
+				document.dfrm.password.value='';
+				document.dfrm.password.focus();
 	        }
-		}
+			
+	        	$.ajax({
+	    			type:'post',
+	    			async:true,
+	    			url:'${pageContext.request.contextPath}/MellowTone/delete',
+	    			data:{
+	    				password:$('#password').val()
+	    			},
+	    			success:function(result){
+	    				if(result == "SUCCESS")
+	    					alert("회원탈퇴 성공!!");
+	    					location.href="${pageContext.request.contextPath}/join/logout";
+	    			}
+	    		});
+	        }
+		
 	</script>
 	
 	<style>
@@ -55,7 +67,7 @@
 <body>
 	<center>
 
-	<form name="dfrm" method="post" action="/MellowTone/delete">
+	<form name="dfrm" method="POST" action="/MellowTone/delete">
 	<table  cellpadding="8"  style=" border-collapse:collapse; " width="900px" >
             <tr style="font-size: 30px; font-weight: bold;"><td class="border2" colspan="2" height="110px" align="center">회원탈퇴</td></tr>
       <tr>
@@ -66,7 +78,7 @@
       </tr>
       <tr style="font-size: 18px;">
          <td align="right"> 비밀번호 </td>
-         <td> <input type="password" class="input_text" name="pass"> </td>
+         <td> <input type="password" class="input_text" name="password"> </td>
       </tr>
       <tr>
          <td colspan="2" height="150px" align="center" ><input type="button" class="button1" value="확인" onclick="passCheck()">&nbsp;&nbsp;<input type="reset" value="취소" class="button1" onclick="cancel()"> </td>
