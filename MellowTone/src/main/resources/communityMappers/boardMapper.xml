@@ -7,6 +7,17 @@
 		bno,title,content,writer,regdate,viewcnt,image,replycnt
 		from mellow_board
 		where tno =	#{tno}
+		<if test="searchType != null">
+	    	<if test="searchType == 't'.toString() ">
+	        	and title like '%'||#{keyword}||'%'
+	    	</if>
+	    	<if test="searchType == 'c'.toString()">
+	       		and content like '%'||#{keyword}||'%'
+	    	</if>
+	    	<if test="searchType == 'w'.toString() ">
+	        	and writer like '%'||#{keyword}||'%'
+	    	</if>
+	  </if>  
 		order by bno desc
 	</select>
 	
@@ -30,4 +41,44 @@
 		from mellow_board
 		where tno=#{tno}
 	</select>
+	
+	<!-- 게시판 글 등록 -->
+	<insert id="insert">
+		insert into	mellow_board(bno,tno,title,content,image,writer)
+		values(mellow_board_seq.nextval,#{tno},#{title},#{content},#{image},#{writer})
+	</insert>
+	
+	<!-- 게시판 글 삭제 -->
+	<delete id="delete">
+		delete from mellow_board
+		where bno=#{bno}
+	</delete>
+	
+	<!-- 게시판 글 수정 -->
+	<update id="update">
+		<!-- 기존 타이틀과 내용에 대한 수정 -->
+		update mellow_board set title=#{title} , content=#{content}
+		<if test="image != null">
+			,image=#{image}
+		</if>
+		where bno=#{bno}
+	</update>
+	
+	<select id="select_prevbno" resultType="int">
+		select min(bno)
+		from mellow_board
+		where bno > #{bno}
+	</select>
+	
+	<select id="select_nextbno" resultType="int">
+		select max(bno)
+		from mellow_board
+		where bno  <![CDATA[<]]> #{bno}
+	</select>
+	
+	<update id="update_viewcnt">
+		<!-- 기존 타이틀과 내용에 대한 수정 -->
+		update mellow_board set viewcnt=(select viewcnt+1 from mellow_board where bno=#{bno})
+		where bno=#{bno}
+	</update>
 </mapper>

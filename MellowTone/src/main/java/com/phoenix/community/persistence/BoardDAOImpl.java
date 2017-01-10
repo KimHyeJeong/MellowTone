@@ -37,4 +37,36 @@ public class BoardDAOImpl implements BoardDAO {
 		return session.selectOne("board.listcount", tno);
 	}
 
+	@Override
+	public void insert(BoardVO board) throws Exception {
+		session.insert("board.insert", board);
+	}
+
+	@Override
+	public void delete(int bno) throws Exception {
+		session.delete("board.delete", bno);
+	}
+
+	@Override
+	public void update(BoardVO board) throws Exception {
+		session.update("board.update", board);
+	}
+
+	@Override
+	public int select_prevbno(int bno) throws Exception {
+		if(session.selectOne("board.select_prevbno", bno)==null) return 0;
+		return session.selectOne("board.select_prevbno", bno);
+	}
+
+	@Override
+	public int select_nextbno(int bno) throws Exception {
+		if(session.selectOne("board.select_nextbno", bno)==null) return 0;
+		return session.selectOne("board.select_nextbno", bno);
+	}
+
+	@Override
+	public void update_viewcnt(int bno) throws Exception {
+		session.update("board.update_viewcnt", bno);
+	}
+
 }
