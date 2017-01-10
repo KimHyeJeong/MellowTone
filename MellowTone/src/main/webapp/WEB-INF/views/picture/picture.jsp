@@ -18,19 +18,19 @@
    }
 </style>
 <script type="text/javascript">
-<%--    
+    
    function bt_click(){
-      if(${picture.no}==1){
-         location.href="gallery.do?action=1";
-      }else if(${picture.no}==2){
-         location.href="gallery.do?action=2";
-      }else if(${picture.no}==3){
-         location.href="gallery.do?action=3";
-      }else if(${picture.no}==4){
-         location.href="gallery.do?action=4";
+      if(${picture.no}==4){
+         location.href="/MellowTone/gallery?no=11";
+      }else if(${picture.no}==5){
+         location.href="/MellowTone/gallery?no=12";
+      }else if(${picture.no}==6){
+         location.href="/MellowTone/gallery?no=13";
+      }else if(${picture.no}==7){
+         location.href="/MellowTone/gallery?no=14";
       }
    }
-   
+   <%--
    function pocketWin(){
       var id =    "<%=session.getAttribute("id")%>";
       
