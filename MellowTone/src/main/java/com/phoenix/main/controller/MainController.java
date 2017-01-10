@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.phoenix.main.domain.MemberVO;
 import com.phoenix.main.service.GalleryService;
@@ -95,6 +96,7 @@ public class MainController {
    @RequestMapping("/mypage")
    public String mypage(Model model,HttpSession session)throws Exception{
 	   String id = ((MemberVO)session.getAttribute("login")).getId();
+	   
       
       model.addAttribute("title","Mypage");
       model.addAttribute("list",sidebar_service.select_mypage());
@@ -141,10 +143,29 @@ public class MainController {
    }
    
    @RequestMapping("/update")
-   public String update(Model model)throws Exception{
+   public String update(Model model,HttpSession session)throws Exception{
+	   String id = ((MemberVO)session.getAttribute("login")).getId();
+	   String dpass = service.select(id).getPassword();
+	   
+	   model.addAttribute("title","Mypage");
+	   model.addAttribute("list",sidebar_service.select_mypage());
+	   model.addAttribute("body","./mypage/pass_check.jsp");
+	   
+	   model.addAttribute("LoginUser", dpass);
+	   
+	   return "mainview";
+   }
+   
+   @RequestMapping("/update_form")
+   public String update_form(Model model,HttpSession session)throws Exception{
+	   String id = ((MemberVO)session.getAttribute("login")).getId();
+	   
 	   model.addAttribute("title","Mypage");
 	   model.addAttribute("list",sidebar_service.select_mypage());
 	   model.addAttribute("body","./mypage/member_edit.jsp");
+	   
+	   model.addAttribute("user", service.check(id));
+	   
 	   
 	   return "mainview";
    }

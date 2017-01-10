@@ -4,6 +4,8 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,19 +40,22 @@ public class MemberController {
 	@RequestMapping("/login")
 	public @ResponseBody String login(HttpSession session, String id, String password)throws Exception{
 		String result="FAIL";
-		System.out.println("password="+password);
+		id = service.select(id).getId();
 		String dpass = service.select(id).getPassword();
-		System.out.println("dpass="+dpass);
+		
 		
 		if(password.equals(dpass)){
 			
 			result="SUCCESS";
 			
-			session.setAttribute("login", service.login(id, password));
+			session.setAttribute("login", service.login(id, dpass));
+			
 			
 		}
 		return result;
 	}
+	
+	
 	
 
 }

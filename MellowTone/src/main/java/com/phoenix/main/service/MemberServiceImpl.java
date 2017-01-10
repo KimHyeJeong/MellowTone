@@ -36,4 +36,9 @@ public class MemberServiceImpl implements MemberService {
 		return dao.check(id);
 	}
 
+	@Override
+	public void update(MemberVO vo) throws Exception {
+		dao.update(vo);
+	}
+
 }

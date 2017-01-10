@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원 정보 변경</title>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 	function cancel(){
 		location.href="./mypage.do?action=check";
@@ -56,8 +57,18 @@
 		}else if(phone.length!=3||phone1.length!=4||phone2.length!=4||isNaN(phone1)||isNaN(phone2)||isNaN(phone)){
 			alert("핸드폰 번호를 확인하세요");
 			document.Jfrm.phone.focus();
-		}else{		//이메일 유효검사안함
-			document.Jfrm.submit();
+		}else{		
+			$.ajax({
+				type:'post',
+				url:'/mypage/update',
+				data:$('#Jfrm').serialize(),
+				success:function(result){
+					if(result=="SUCCESS"){
+						alert("개인 정보 수정이 완료되었습니다.");
+						location.href="/MellowTone/main";
+					}
+				}
+			});
 		}
 		
 		
@@ -119,7 +130,7 @@
 <body>
 	<center>
 		
-		<form action="mypage.do?action=update" method="post" name=Jfrm>
+		<form name=Jfrm>
 			<input type="hidden" name="no" value="${user.no}">
  			<table  cellpadding="8"  style=" border-collapse:collapse; line-height:50px;" width="900px" >
             <tr style="font-size: 30px; font-weight: bold;"><td class="border2" colspan="2" height="110px" align="center">회원정보변경</td></tr>
@@ -130,11 +141,11 @@
             </tr>
             <tr style="font-size:18px;">
                <td class="border1" width="150px" >비밀번호</td>
-               <td class="border1" width="390px"><input type="password"  class="input_text" size="19" name="pass1" value="${user.password }" > </td>
+               <td class="border1" width="390px"><input type="password"  class="input_text" size="19" name="pass1"  > </td>
             </tr> 
             <tr style="font-size:18px;">
                <td class="border1" width="150px">비밀번호 확인</td>
-               <td class="border1" width="390px"><input type="password"  class="input_text" size="19" name="pass2" value="${user.password_ck }" > </td>
+               <td class="border1" width="390px"><input type="password"  class="input_text" size="19" name="pass2" " > </td>
             </tr>
             <tr style="font-size:18px;">
                <td class="border1"> 성 명</td>

@@ -7,4 +7,5 @@ public interface MemberDAO {
 	public MemberVO login(String id, String password)throws Exception;
 	public MemberVO select(String id)throws Exception;
 	public MemberVO check(String id)throws Exception;
+	public void update(MemberVO vo)throws Exception;
 }

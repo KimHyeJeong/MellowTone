@@ -23,7 +23,7 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public MemberVO login(String id, String password) throws Exception {
-		Map<Object, String> map = new HashMap<>();
+		Map<String, Object> map = new HashMap<>();
 			map.put("id", id);
 			map.put("password", password);
 		return sqlSession.selectOne("member.login", map);
@@ -37,6 +37,11 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public MemberVO check(String id) throws Exception {
 		return sqlSession.selectOne("member.check", id);
+	}
+
+	@Override
+	public void update(MemberVO vo) throws Exception {
+		sqlSession.update("member.update", vo);
 	}
 
 	
