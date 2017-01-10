@@ -31,4 +31,9 @@
        from sidebar_mypage
        order by no
     </select>
+    <select id="select_reservation" resultType="sidebar">
+    	select name,url
+    	from sidebar_reservation
+    	order by no
+    </select>
 </mapper>

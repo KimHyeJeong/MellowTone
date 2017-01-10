@@ -11,5 +11,6 @@ public interface SidebarDAO {
 	public List<SidebarVO> select_picture()throws Exception;
 	public List<SidebarVO> select_mypage()throws Exception;
 	public List<SidebarVO> select_community()throws Exception;
+	public List<SidebarVO> select_reservation()throws Exception;
 	
 }

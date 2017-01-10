@@ -316,3 +316,20 @@ insert into sidebar_mypage values (sidebar_seq.nextval,'회원정보 확인','/MellowT
 insert into sidebar_mypage values (sidebar_seq.nextval,'회원정보 변경','/MellowTone/update');
 insert into sidebar_mypage values (sidebar_seq.nextval,'장바구니','/MellowTone/pocket');
 insert into sidebar_mypage values (sidebar_seq.nextval,'회원 탈퇴','/MellowTone/delete');
+
+drop table sidebar_reservation;
+create table sidebar_reservation(
+	no number primary key,
+	name varchar2(20) not null,
+	url varchar2(40) not null
+);
+
+drop sequence reservation_seq;
+create sequence reservation_seq
+	start with 1
+	increment by 1
+	nocycle
+	nocache;
+
+insert into sidebar_reservation values (reservation_seq.nextval,'예약하기','/MellowTone/book');
+insert into sidebar_reservation values (reservation_seq.nextval,'예약확인/취소','/MellowTone/success');

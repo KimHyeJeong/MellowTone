@@ -45,4 +45,9 @@ public class SidebarServiceImpl implements SidebarService {
 		return dao.select_community();
 	}
 
+	@Override
+	public List<SidebarVO> select_reservation() throws Exception {
+		return dao.select_reservation();
+	}
+
 }

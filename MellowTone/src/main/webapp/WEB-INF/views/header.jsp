@@ -197,10 +197,10 @@ if( session.getAttribute("login")==null){ %>
                 </ul>
                 </li> 
                
-        <li><a href="reservation.do?action=book" onMouseOver="processClick(4)" onMouseOut="upMenu(4)">RESERVATION</a>
+        <li><a href="/MellowTone/reservation" onMouseOver="processClick(4)" onMouseOut="upMenu(4)">RESERVATION</a>
                 <ul class="smallMenu" onMouseOver="processClick(4)" onMouseOut="upMenu(4)">
-                    <li> <a href="reservation.do?action=book" >Booking</a></li> 
-                    <li> <a href="reservation.do?" >Confirmation</a></li>
+                    <li> <a href="/MellowTone/book" >Booking</a></li> 
+                    <li> <a href="/MellowTone/success" >Confirmation</a></li>
                 </ul>
                 </li>
         <li><a href="/MellowTone/boardlist?tno=1" onMouseOver="processClick(5)" onMouseOut="upMenu(5)">COMMUNITY</a>

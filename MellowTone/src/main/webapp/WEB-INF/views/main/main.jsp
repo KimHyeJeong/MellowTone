@@ -459,7 +459,7 @@ a{
 
             </div>
          </div>
-      </a> <a href="reservation.do?action=booking">
+      </a> <a href="/MellowTone/reservation">
       
          <div id="section4" onmouseover="down1(4)" onmouseout="up1(4)" style="overflow: hidden;">
             <div>

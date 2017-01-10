@@ -98,6 +98,15 @@ public class MainController {
       return "mainview";
    }
    
+   @RequestMapping("/reservation")
+   public String reservation(Model model)throws Exception{
+      model.addAttribute("title", "Reservation");
+      model.addAttribute("list", sidebar_service.select_reservation());
+      model.addAttribute("body", "./book/reservation.jsp");
+      return "mainview";
+   }
+   
+   
    @RequestMapping("/mypage")
    public String mypage(Model model,HttpSession session)throws Exception{
 	   String id = ((MemberVO)session.getAttribute("login")).getId();
