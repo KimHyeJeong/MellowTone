@@ -75,14 +75,14 @@ $(document).ready(function(){
                      <td class="lb" nowrap="">&nbsp;</td>
                      <td class="cb pos_rel">
                         <!-- content start -->
-<%--                         <c:if test="${ (sessionScope.id !=null&&cri.tno>1)|| (cri.tno>=1&&sessionScope.id =='admin')}">
+                         <c:if test="${ (sessionScope.id !=null&&cri.tno>1)|| (cri.tno>=1&&sessionScope.id =='admin')}">
                         <div class="list_btn_areaT">
                            <a href="#"
                               onclick="caller('/_c21_/united_write?grpid=mEr9&amp;mgrpid=&amp;fldid=LNQb&amp;page=1'); return false;"
                               class="btn"><span class="btn_bg bg03"></span><span
-                              class="btn_txt bt03 w07 b"><span class="btn_icon_write">글쓰기</span></span></a>
+                              class="btn_txt bt03 w07 b"><span class="write">글쓰기</span></span></a>
                         </div>
-                        </c:if> --%>
+                        </c:if> 
                         <form name="listForm" method="post">
                            <input type="hidden" name="moveto" value=""> <input
                               type="hidden" name="changerolecode" value="">
