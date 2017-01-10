@@ -7,7 +7,7 @@
 <title>예약하기 2단계</title>
 	<script type="text/javascript">
 		function cancel(){
-			location.href="./reservation.do";
+			location.href="/MellowTone/book";
 		}
 	</script>
 </head>

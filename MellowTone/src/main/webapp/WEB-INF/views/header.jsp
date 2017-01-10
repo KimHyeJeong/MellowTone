@@ -197,7 +197,7 @@ if( session.getAttribute("login")==null){ %>
                 </ul>
                 </li> 
                
-        <li><a href="/MellowTone/reservation" onMouseOver="processClick(4)" onMouseOut="upMenu(4)">RESERVATION</a>
+        <li><a href="/MellowTone/book" onMouseOver="processClick(4)" onMouseOut="upMenu(4)">RESERVATION</a>
                 <ul class="smallMenu" onMouseOver="processClick(4)" onMouseOut="upMenu(4)">
                     <li> <a href="/MellowTone/book" >Booking</a></li> 
                     <li> <a href="/MellowTone/success" >Confirmation</a></li>

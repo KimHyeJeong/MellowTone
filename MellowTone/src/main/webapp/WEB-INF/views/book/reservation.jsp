@@ -87,7 +87,7 @@
    }
 
    function nextstage() {
-      location.href = "./reservation.do?action=next";
+      location.href = "/MellowTone/booking";
    }
 </script>
 </head>

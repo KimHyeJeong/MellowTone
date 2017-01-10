@@ -98,13 +98,22 @@ public class MainController {
       return "mainview";
    }
    
-   @RequestMapping("/reservation")
+   @RequestMapping("/book")
    public String reservation(Model model)throws Exception{
       model.addAttribute("title", "Reservation");
       model.addAttribute("list", sidebar_service.select_reservation());
       model.addAttribute("body", "./book/reservation.jsp");
       return "mainview";
    }
+   
+   @RequestMapping("/booking")
+	public String booking(Model model)throws Exception{
+		model.addAttribute("title", "Reservation");
+	    model.addAttribute("list", sidebar_service.select_reservation());
+		model.addAttribute("body", "./book/reservation_2.jsp");
+		
+		return "mainview";
+	}
    
    
    @RequestMapping("/mypage")
