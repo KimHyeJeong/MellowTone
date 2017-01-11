@@ -6,9 +6,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>상세보기</title>
-<link rel="stylesheet" type="text/css" href="/resources/css/jaehyuntest.css" title="blue" media="screen" />
+<!-- <link rel="stylesheet" type="text/css" href="/resources/css/jaehyuntest.css" title="blue" media="screen" />
 <link rel="stylesheet" type="text/css" href="http://s1.cafe.daumcdn.net/cafe/_c21_/css/mEr9/321/20161123175651.91/20161123175556.27/20160602174211.21.css?grpid=mEr9" />
-<link rel="stylesheet" href="http://s1.daumcdn.net/editor/releases/7.4.33-3/css/content_view.css" type="text/css" charset="utf-8"/>
+<link rel="stylesheet" href="http://s1.daumcdn.net/editor/releases/7.4.33-3/css/content_view.css" type="text/css" charset="utf-8"/> -->
 <script>
 var bno =${boardVO.bno};
 var replypage = 1;
@@ -340,51 +340,18 @@ function removereply(rno){
 		<input type='hidden' name='searchType' value="${cri.searchType}">
 		<input type='hidden' name='keyword' value="${cri.keyword}">
 
-		<div class="list_btn_area list_btn_top list_btn_bbs_read">
-		<c:if test="${cri.tno>3 || sessionScope.userid =='admin'}">
-			<a href="javascript:;" class="btn" id="searchBtn">
-				<span class="btn_bg bg03"></span>
-				<span class="btn_txt bt03 w07 b"><span class="btn_icon_write" style="margin-right: 5px;">글쓰기 </span></span>
-			</a>
-		</c:if>
-		<c:if test="${sessionScope.userid==boardVO.writer || sessionScope.userid =='admin'}">
-			<a href="javascript:;" class="btn" id="updateBtn">
-				<span class="btn_bg bt03" style="width: ;"> </span>
-				<span class="btn_txt bt03 w03" style="float: left; width: 35px;text-align: left;">수정</span>
-			</a>
-			<a href="javascript:;" class="btn" id="removeBtn">
-				<span class="btn_bg bt03"></span>
-				<span class="btn_txt bt03 w23" style="text-align: left;width: 35px;">삭제</span>
-			</a>
-		</c:if>
-			<span class="list_paging">
-			<a href="javascript:;" id="listBtn">목록</a>
-			<c:if test="${prevbno!=null}">
-				<span class="bar2">|</span> 
-				<a href="/MellowTone/boardpage?page=${cri.page}&perPageNum=${cri.perPageNum}&searchType=${cri.searchType }&keyword=${cri.keyword}&bno=${prevbno}&tno=${cri.tno}" class="prevBtn">
-				<span class="arrow">▲</span>윗글</a>
-			</c:if>
-			<c:if test="${nextbno!=null}">
-				<span class="bar2">|</span>
-				<a href="/MellowTone/boardpage?page=${cri.page}&perPageNum=${cri.perPageNum}&searchType=${cri.searchType }&keyword=${cri.keyword}&bno=${nextbno}&tno=${cri.tno}" class="nextBtn">
-				<span class="arrow">▼</span>아랫글</a>
-			</c:if>
-			</span>
-		</div>
 		<!-- end list_btn_area -->
 		<div class="cl">&nbsp;</div>
 		<div class="article_subject line_sub">
 			<div class="subject" id="title_div" style="display:block;">
-				<span class="headcate"> </span> <span class="b" style="float: left;">제목</span><span
-					class="bar2" style="float: left;">|</span><span style="float: left;"> ${boardVO.title}</span> <br>
+				<span class="headcate"> </span> <span class="b">제목</span><span class="bar2">|</span><span> ${boardVO.title}</span> <br>
 			</div>
 			<div class="subject" id="title_div2" style="display:none;">
-				<span class="headcate"> </span> <span class="b"style="float: left;">제목</span><span
-					class="bar2" style="float: left;">|</span> <input type="text" name="title" style="width:500px; float: left;" value="${boardVO.title}"/> <br>
+				<span class="headcate"> </span> <span class="b">제목</span><span class="bar2">|</span> <input type="text" name="title" style="width:500px;" value="${boardVO.title}"/> <br>
 			</div>
 		</div>
 		<!-- end article_subject -->
-		<div class="article_writer">
+		<div class="article_writer" style="text-align: right;">
 			<span class="p12">작성자:${boardVO.writer}</span>
 			<span class="bar2">|</span><span class="p11">조회  ${boardVO.viewcnt}</span>
 			<span class="bar2">|</span><span class="p11">추천	0</span>
@@ -403,22 +370,18 @@ function removereply(rno){
 						<tbody>
 							<tr>
 								<td>
-									<!-- clix_content 이 안에 본문 내용 외에 다른 내용을 절대 넣지 말 것  <script
-										type="text/javascript">//<![CDATA[
-										document.write(removeRestrictTag());
-										//]]></script> -->
 									<p style="text-align: center;">
 									<c:if test="${boardVO.image!=null}">
 										<img src="${boardVO.image}"
 											class="txc-image"  border="0"
-											actualwidth="70" width="70" exif="{}" data-filename="..png"
+											actualwidth="500" width="500" exif="{}" data-filename="..png"
 											style="clear: none; float: none;"
 											id="blah">
 									</c:if>
 									<c:if test="${boardVO.image==null}">
 										<img
 											class="txc-image"  border="0"
-											actualwidth="70" width="70" exif="{}" data-filename="..png"
+											actualwidth="500" width="500" exif="{}" data-filename="..png"
 											style="clear: none; float: none;"
 											id="blah">
 									</c:if>
@@ -426,8 +389,8 @@ function removereply(rno){
 									<p>
 										<br>
 									</p>
-									<p><div id="page" style="display: block;float: left;">${boardVO.content}</div>
-										<textarea name="content" id="contents" style="border:0; display: none;">${boardVO.content}</textarea>
+									<p><div id="page" style="display: block; text-align: center;">${boardVO.content}</div>
+										<textarea name="content" id="contents" style="border:0; display: none;text-align: center;">${boardVO.content}</textarea>
 									</p>
 								</td>
 							</tr>
@@ -441,10 +404,6 @@ function removereply(rno){
 						</tbody>
 					</table>
 				</div>
-
-				<!--  <script type="text/javascript">//<![CDATA[
-				redefineLink();
-				//]]></script>-->
 			</div>
 		</div>
 		<!-- end bbs_contents -->
@@ -547,6 +506,37 @@ function removereply(rno){
 				</c:if>
 			</ul>
 		</div> --%>
+				<div class="list_btn_area list_btn_top list_btn_bbs_read" style="text-align: right;">
+		<c:if test="${cri.tno>3 || sessionScope.userid =='admin'}">
+			<a href="javascript:;" class="btn" id="searchBtn">
+				<span class="btn_bg bg03"></span>
+				<span class="btn_txt bt03 w07 b"><span class="btn_icon_write" style="margin-right: 5px;">글쓰기 </span></span>
+			</a>
+		</c:if>
+		<c:if test="${sessionScope.userid==boardVO.writer || sessionScope.userid =='admin'}">
+			<a href="javascript:;" class="btn" id="updateBtn">
+				<span class="btn_bg bt03" style="width: ;"> </span>
+				<span class="btn_txt bt03 w03" style="float: left; width: 35px;text-align: left;">수정</span>
+			</a>
+			<a href="javascript:;" class="btn" id="removeBtn">
+				<span class="btn_bg bt03"></span>
+				<span class="btn_txt bt03 w23" style="text-align: left;width: 35px;">삭제</span>
+			</a>
+		</c:if>
+			<span class="list_paging">
+			<a href="javascript:;" id="listBtn">목록</a>
+			<c:if test="${prevbno!=null}">
+				<span class="bar2">|</span> 
+				<a href="/MellowTone/boardpage?page=${cri.page}&perPageNum=${cri.perPageNum}&searchType=${cri.searchType }&keyword=${cri.keyword}&bno=${prevbno}&tno=${cri.tno}" class="prevBtn">
+				<span class="arrow">▲</span>윗글</a>
+			</c:if>
+			<c:if test="${nextbno!=null}">
+				<span class="bar2">|</span>
+				<a href="/MellowTone/boardpage?page=${cri.page}&perPageNum=${cri.perPageNum}&searchType=${cri.searchType }&keyword=${cri.keyword}&bno=${nextbno}&tno=${cri.tno}" class="nextBtn">
+				<span class="arrow">▼</span>아랫글</a>
+			</c:if>
+			</span>
+		</div>
 	</form>
 </div>
 </body>

@@ -5,9 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>글작성</title>
-<link rel="stylesheet" type="text/css" href="/resources/css/jaehyuntest.css" title="blue" media="screen" />
+<!-- <link rel="stylesheet" type="text/css" href="/resources/css/jaehyuntest.css" title="blue" media="screen" />
 <link rel="stylesheet" type="text/css" href="http://s1.cafe.daumcdn.net/cafe/_c21_/css/mEr9/321/20161123175651.91/20161123175556.27/20160602174211.21.css?grpid=mEr9" />
-<link rel="stylesheet" href="http://s1.daumcdn.net/editor/releases/7.4.33-3/css/content_view.css" type="text/css" charset="utf-8"/>
+<link rel="stylesheet" href="http://s1.daumcdn.net/editor/releases/7.4.33-3/css/content_view.css" type="text/css" charset="utf-8"/> -->
 <script>
 $(document).ready(function(){
    $("#blah").hide();   
@@ -67,9 +67,9 @@ $(document).ready(function(){
 			<div class="cl">&nbsp;</div>
 			<div class="article_subject line_sub">
 				<div class="subject" id="title_div2">
-					<span class="headcate"> </span> <span class="b" style="float: left;">제목</span><span
-						class="bar2" style="float: left;">|</span> <input type="text" name="title"
-						id="title" style="width: 96%; float: left;" value="${boardVO.title}" /><br>
+					<span class="headcate"> </span> <span class="b">제목</span><span
+						class="bar2">|</span> <input type="text" name="title"
+						id="title" style="width: 50%;" value="${boardVO.title}" /><br>
 				</div>
 			</div>
 			<div class="form-group" id="fileselect">
