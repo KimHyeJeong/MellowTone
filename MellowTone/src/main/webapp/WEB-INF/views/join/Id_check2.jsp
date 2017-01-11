@@ -28,7 +28,6 @@
 	function useId() {
 		opener.document.Jfrm.id.value = '${param.id}';
 		window.close();
-
 	}
 
 	function checkId() {
