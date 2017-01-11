@@ -520,7 +520,7 @@ function removereply(rno){
 		<div class="cl">&nbsp;</div>
 
 		<!-- 새롭게 추가된 윗글/아랫글 -->
-		<div class="prenext_paging">
+<%-- 		<div class="prenext_paging">
 			<ul>
 				<c:if test="${prevbno!=null}">
 				<li>
@@ -546,7 +546,7 @@ function removereply(rno){
 				</li>
 				</c:if>
 			</ul>
-		</div>
+		</div> --%>
 	</form>
 </div>
 </body>
